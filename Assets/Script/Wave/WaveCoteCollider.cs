@@ -14,10 +14,19 @@ public class WaveCoteCollider : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{			
 		if(collision.gameObject.tag == "Player") 
-		{		
- 			script.setCoteCollision();
-			collision.gameObject.GetComponent<PlayerController>().HitWall();
-			script.disableCollision();
+		{	//Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag == "stateRun");
+			if(GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
+			{
+				// Ici permet de diminuer la vie et de mettre la wave a jour
+				script.disableCollision();
+				script.setWeaponCollision();
+			}
+			else
+			{
+				script.setCoteCollision();
+				collision.gameObject.GetComponent<PlayerController>().HitWall();
+				script.disableCollision();
+			}
 		}
 	}
 }

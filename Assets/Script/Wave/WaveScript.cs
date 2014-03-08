@@ -46,9 +46,8 @@ public class WaveScript : MonoBehaviour {
 
 	public void setHautCollision()
 	{		
-		Debug.Log("Haut Collision");
+		//Debug.Log("Haut Collision");
 		playerHautCollision = true;
-		script.inscreaseScore(100);
 		 
 	}
 
