@@ -9,7 +9,7 @@ Material:
   m_Name: magicchain
   m_Shader: {fileID: 4800000, guid: f22e0ea06e9c944dda09f3cc3006ae4e, type: 3}
   m_ShaderKeywords: []
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
