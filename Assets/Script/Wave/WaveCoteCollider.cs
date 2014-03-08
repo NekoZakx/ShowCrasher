@@ -11,12 +11,13 @@ public class WaveCoteCollider : MonoBehaviour
 		script = transform.parent.gameObject.GetComponent<WaveScript>();
 	}
 		
-	void OnCollisionEnter2D(Collision2D collision) 
+	void OnTriggerEnter2D(Collider2D collision)
 	{			
 		if(collision.gameObject.tag == "Player") 
 		{		
  			script.setCoteCollision();
 			collision.gameObject.GetComponent<PlayerController>().HitWall();
+			script.disableCollision();
 		}
 	}
 }

@@ -64,5 +64,10 @@ public class WaveScript : MonoBehaviour {
 		playerWeaponCollision = true;
 		script.inscreaseScore(100);
 	}
-	
+
+	public void disableCollision()
+	{
+		transform.GetChild (0).GetComponent<BoxCollider2D> ().enabled = false;
+		transform.GetChild (1).GetComponent<BoxCollider2D> ().enabled = false;
+	}
 }
