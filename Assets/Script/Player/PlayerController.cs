@@ -14,8 +14,16 @@ public class PlayerController : MonoBehaviour {
 	public float timer = 0.2f;
 	public float staggerTimmer = 0.0f;
 
+	public AudioSource JumpSrc;
+	public AudioSource LandSrc;
+	public AudioSource BounceSrc;
+	public AudioSource HitWallSrc;
+	public AudioSource AttackSrc;
+
+
 	void Awake()
 	{
+		//audioSrc = GetComponent<AudioSource>();
 	}
 
 	// Use this for initialization
@@ -101,11 +109,19 @@ public class PlayerController : MonoBehaviour {
 		if (jump)//Si on peut sauter. 
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpForce);
+
+			if(!AttackSrc.isPlaying)
+			{
+				JumpSrc.Play();
+			}
 			jump = false;
 		}
 
 		if (isAttacking)
 		{
+			if(!AttackSrc.isPlaying)
+				AttackSrc.Play();
+
 			isAttacking = false;
 			playerAnimation.SetBool ("Attack", false);
 		}
@@ -122,6 +138,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Terrain") 
 		{
+			if(!LandSrc.isPlaying)
+				LandSrc.Play();
 			grounded = true;
 			jump = false;
 		}
@@ -131,11 +149,15 @@ public class PlayerController : MonoBehaviour {
 	public void Bounce(float _vel)
 	{
 		rigidbody2D.velocity = new Vector2(0, jumpForce + _vel);
+		if(!BounceSrc.isPlaying)
+			BounceSrc.Play();
 	}
 
 	public void HitWall()
 	{
 		playerAnimation.SetBool ("Stagger", true);
 		staggerTimmer = 0.1f;
+		if(!HitWallSrc.isPlaying)
+			HitWallSrc.Play();
 	}
 }
