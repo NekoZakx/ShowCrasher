@@ -31,7 +31,7 @@ public class WaveScript : MonoBehaviour {
 	{		
 		Debug.Log("Haut Collision");
 		playerHautCollision = true;
-		script.inscreaseScore(20);
+		script.inscreaseScore(100);
 		 
 	}
 
@@ -46,7 +46,7 @@ public class WaveScript : MonoBehaviour {
 	{
 		Debug.Log("Collision Player Weapon");
 		playerWeaponCollision = true;
-		script.inscreaseScore(30);
+		script.inscreaseScore(100);
 	}
 	
 }

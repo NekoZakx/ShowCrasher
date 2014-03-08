@@ -4,6 +4,7 @@ using System.Collections;
 public class Score : MonoBehaviour 
 {
 	private int score;
+	public float timer = 6.0f;
 	public Font myFont;
 
 	// Use this for initialization
@@ -14,10 +15,16 @@ public class Score : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		/*if (score > 0) 
+		timer -= Time.deltaTime;
+		if (score - 30 > 0 && timer <= 0) 
 		{
 			score -= 30;
-		}*/
+			timer = 6.0f;
+		} 
+		else if (score - 30 < 0) 
+		{
+			score = 0;
+		}
 	}
 
 	public void inscreaseScore(int newScore)
