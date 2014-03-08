@@ -77,5 +77,18 @@ public class WaveScript : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+		
+
+	}
+
+	public void jumpOnWave()
+	{
+		GetComponent<Animator>().SetBool("Wave_jumped_on", true);
+	}
+
+	public void killWave()
+	{
+		
+		GetComponent<Animator>().SetBool("Kill_wave", true);
 	}
 }

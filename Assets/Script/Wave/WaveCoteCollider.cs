@@ -25,6 +25,7 @@ public class WaveCoteCollider : MonoBehaviour
 		{
 			script.disableCollision();
 			script.setWeaponCollision();
+			script.killWave();
 		}
 	}
 }
