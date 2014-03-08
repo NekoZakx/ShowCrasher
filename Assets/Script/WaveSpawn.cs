@@ -67,7 +67,7 @@ public class WaveSpawn : MonoBehaviour {
 				waveSpawn = (GameObject)Instantiate(wave2, wavePosition, Quaternion.identity);
 				do{
 					timeSpawn = RollDice(5);
-				}while(timeSpawn<=1);
+				}while(timeSpawn==1);
 				break;
 			case 3:
 				wavePosition = new Vector2(3.0f,1.5f);
@@ -81,6 +81,13 @@ public class WaveSpawn : MonoBehaviour {
 				break;
 			}
 			size = RollDice(3);
+			if (timeSpawn!=2)
+			{
+				while(size==3)
+				{
+					size = RollDice(3);
+				}
+			}
 			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
 			waveList.Add (waveSpawn);
 			itmList.Add (itemSpawn);
