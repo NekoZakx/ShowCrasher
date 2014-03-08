@@ -4,10 +4,11 @@ using System.Collections;
 public class WaveHautCollider : MonoBehaviour {
 
 	private WaveScript script;
-	
+
 	// Use this for initialization
 	void Start () 
 	{
+		gameObject.tag = "HautCollider";
 		script = transform.parent.gameObject.GetComponent<WaveScript>();
 	}
 

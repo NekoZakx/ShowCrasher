@@ -24,6 +24,7 @@ public class Jump : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		Debug.Log ("testestetes");
 		if (Input.GetButtonDown("Jump") && grounded) 
 		{
 			jump = true;
@@ -64,9 +65,9 @@ public class Jump : MonoBehaviour {
 			grounded = true;
 		}
 
-		if (collision.gameObject.tag == "HautCollider") 
+		if (collision.contacts[0].collider.name == "HautCollider") 
 		{
-
+			rigidbody2D.velocity = new Vector2(0, jumpForce + 2);
 		}
 
 	}

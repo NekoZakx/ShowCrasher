@@ -8,6 +8,7 @@ public class WaveCoteCollider : MonoBehaviour
 
 	void Start () 
 	{
+		gameObject.tag = "CoteCollider";
 		script = transform.parent.gameObject.GetComponent<WaveScript>();
 	}
 		
