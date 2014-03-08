@@ -9,5 +9,7 @@ Assembly-UnityScript-firstpass-vs.unityproj
 Assembly-UnityScript-firstpass.unityproj
 Temp/
 Library/
+Assets/ShaderForge/
+Assets/Xffect/
 Assembly-CSharp-vs.csproj
 Assembly-CSharp.csproj
