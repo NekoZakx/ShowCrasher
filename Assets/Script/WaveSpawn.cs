@@ -20,11 +20,12 @@ public class WaveSpawn : MonoBehaviour {
 	private GameObject waveSpawn;
 	private GameObject itemSpawn;
 	private Vector2 wavePosition;
-	private Vector2 itmPosition;
 	private float[] itmHeight;
+	private float waveHeight;
 	private float CurrentVelocitySpawn;
 	private float bouncePower;
-
+	private Vector2 initWavePosition;
+	private Vector2 initItemPosition;
 	// Use this for initialization
 	void Awake()
 	{
@@ -32,7 +33,9 @@ public class WaveSpawn : MonoBehaviour {
 		itmHeight [0] = 8.0f;
 		itmHeight [1] = 12.0f;
 		itmHeight [2] = 16.0f;
-		
+		waveHeight = -0.9f;
+		initWavePosition = transform.position; 
+		initItemPosition.x = transform.position.x+2; 
 		//waveList = new ArrayList();
 		//itmList = new ArrayList();
 	}
@@ -47,6 +50,7 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
+		initWavePosition.y = waveHeight;
 		CurrentVelocitySpawn = -15f;
 		timer += Time.deltaTime;
 		Debug.Log ("FixedUpdate");
@@ -56,21 +60,20 @@ public class WaveSpawn : MonoBehaviour {
 			switch(size)
 			{
 			case 1:
-				wavePosition = new Vector2(30.0f,-0.9f);
-				itmPosition = new Vector2(32.0f,itmHeight[0]);
-				waveSpawn = (GameObject)Instantiate(wave1, wavePosition , Quaternion.identity);
+				initItemPosition.y = itmHeight [0];
+				waveSpawn = (GameObject)Instantiate(wave1, initWavePosition , Quaternion.identity);
 				bouncePower = 8;
 				break;
 			case 2:
-				wavePosition = new Vector2(30.0f,0.1f);
-				itmPosition = new Vector2(32.0f,itmHeight[1]);
-				waveSpawn = (GameObject)Instantiate(wave2, wavePosition, Quaternion.identity);
+				initItemPosition.y = itmHeight [1];
+				initWavePosition.y+=1.0f;
+				waveSpawn = (GameObject)Instantiate(wave2, initWavePosition, Quaternion.identity);
 				bouncePower = 13;
 				break;
 			case 3:
-				wavePosition = new Vector2(30.0f,1.5f);
-				itmPosition = new Vector2(32.0f,itmHeight[2]);
-				waveSpawn = (GameObject)Instantiate(wave3, wavePosition, Quaternion.identity);
+				initItemPosition.y = itmHeight [2];
+				initWavePosition.y+=2.1f;
+				waveSpawn = (GameObject)Instantiate(wave3, initWavePosition, Quaternion.identity);
 				bouncePower = 18;
 				break;
 			default:
@@ -84,7 +87,7 @@ public class WaveSpawn : MonoBehaviour {
 					size = RollDice(3);
 				}
 			}*/
-			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
+			itemSpawn = (GameObject)Instantiate(item, initItemPosition , Quaternion.identity);
 			itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
 			waveSpawn.GetComponent<WaveScript>().SetVelocity(CurrentVelocitySpawn);
 			waveSpawn.GetComponent<WaveScript>().BouncePower = bouncePower;
