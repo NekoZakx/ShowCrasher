@@ -6,6 +6,7 @@ public class WaveScript : MonoBehaviour {
 	float waveSpeed = -3f;
 	
 	// Use this for initialization
+	//lol
 	void Start () 
 	{
 		

@@ -4,6 +4,7 @@ using System.Collections;
 public class WaveCollision : MonoBehaviour {
 
 	// Use this for initialization
+	//lol
 	void Start () {
 	
 	}
