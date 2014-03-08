@@ -383,7 +383,9 @@ MonoBehaviour:
   wave1: {fileID: 100004, guid: 15d48a5a1cd4f8f4cb40c4afa275b018, type: 2}
   wave2: {fileID: 100004, guid: 526d1d18647269243bca685f13d93503, type: 2}
   wave3: {fileID: 100004, guid: 2588e8b603ccae94bbe4eacdd67a5b9b, type: 2}
-  item: {fileID: 100000, guid: 1f6df85c570846b4eb05ebf6570537a7, type: 2}
+  triangle: {fileID: 100000, guid: 1f6df85c570846b4eb05ebf6570537a7, type: 2}
+  cymbal: {fileID: 100000, guid: 3bfc40890ca91e14c964b184f19d97be, type: 2}
+  trumpet: {fileID: 100000, guid: 7b3170711acf6b245b3f6066d6b41567, type: 2}
 --- !u!4 &1785697415
 Transform:
   m_ObjectHideFlags: 0

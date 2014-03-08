@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 60: {fileID: 6000000}
   m_Layer: 0
-  m_Name: Guitare
+  m_Name: Guitare_2
   m_TagString: Collectables
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3512c255f29b0794787ecf22225b201d, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c36abff1e68df4e95659f0220c79e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameOfObject: 
@@ -118,7 +118,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 1a609367688f04343b33dd00e5649782, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6d9c623877cb274a8332d15d3d0c5f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
