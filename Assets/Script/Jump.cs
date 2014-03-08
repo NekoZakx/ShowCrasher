@@ -9,6 +9,7 @@ public class Jump : MonoBehaviour {
 	
 	private bool isFalling = false;
 	private bool grounded = false;
+	protected Animator jumpAnimation;
 
 	void Awake()
 	{
@@ -17,6 +18,7 @@ public class Jump : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		jumpAnimation = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +28,14 @@ public class Jump : MonoBehaviour {
 		{
 			jump = true;
 			grounded = false;
+			jumpAnimation.SetBool("Jump", true);
+			jumpAnimation.SetBool("Grounded", false);
+		}
+
+		if (grounded) 
+		{
+			jumpAnimation.SetBool("Jump", false);
+			jumpAnimation.SetBool("Grounded", true);
 		}
 
 		if(rigidbody2D.velocity.y < 0)
