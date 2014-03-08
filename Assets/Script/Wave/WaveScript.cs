@@ -24,7 +24,6 @@ public class WaveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{	
-		Debug.Log("TEST");
 		rigidbody2D.velocity = new Vector2 (waveSpeed, 0f);
 	}
 
