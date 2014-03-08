@@ -11,8 +11,8 @@ public class WaveSpawn : MonoBehaviour {
 	public GameObject wave2;
 	public GameObject wave3;
 	public GameObject item;
-	private ArrayList waveList;
-	private ArrayList itmList;
+	//private ArrayList waveList;
+	//private ArrayList itmList;
 	private float timer = 0.0f;
 	private float timeSpawn = 2.0f;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
@@ -32,11 +32,11 @@ public class WaveSpawn : MonoBehaviour {
 		itmHeight [1] = 4.0f;
 		itmHeight [2] = 8.0f;
 		
-		waveList = new ArrayList();
-		itmList = new ArrayList();
+		//waveList = new ArrayList();
+		//itmList = new ArrayList();
 	}
 	void Start () {
-		WaveMaintenance ();
+		//ClearGame ();
 
 	}
 	
@@ -92,30 +92,30 @@ public class WaveSpawn : MonoBehaviour {
 			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
 			itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
 			waveSpawn.GetComponent<WaveScript>().SetVelocity(CurrentVelocitySpawn);
-			waveList.Add (waveSpawn);
-			itmList.Add (itemSpawn);
+			//waveList.Add (waveSpawn);
+			//itmList.Add (itemSpawn);
 			timer = 0.0f;
 		
 			Debug.Log ("TimeSpawn : " + timeSpawn);
 			Debug.Log ("Size : " + size);
 		}
-
 	}
-	void WaveMaintenance()
+
+	/*void ClearGame()
 	{
-		for(int i = waveList.Count-1;i>=0;i--)
+  		for(int i = waveList.Count-1;i>=0;i--)
 		{
 			GameObject waveDestroy = (GameObject)waveList[i];
 			Destroy(waveDestroy.gameObject);
-			waveList.RemoveAt(i);        
+			//waveList.RemoveAt(i);        
 		}
 		for(int i = itmList.Count-1;i>=0;i--)
 		{
 			GameObject itmDestroy = (GameObject)itmList[i];
 			Destroy(itmDestroy.gameObject);
-			itmList.RemoveAt(i);        
+			//itmList.RemoveAt(i);        
 		}
-	}
+	}*/
 	public static byte RollDice(byte numberSides)
 	{
 		if (numberSides <= 0)
