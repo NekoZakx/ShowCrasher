@@ -15,17 +15,16 @@ public class WaveHautCollider : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{		
 		if(collision.gameObject.tag == "Player") 
-		{	if(GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
-			{
-				script.setWeaponCollision();
-				script.disableCollision();
-			}
-			else
-			{
-				script.setHautCollision();
-				collision.gameObject.GetComponent<PlayerController>().Bounce(transform.parent.gameObject.GetComponent<WaveScript>().BouncePower);
-				script.disableCollision();
-			}
+		{	
+			script.setHautCollision();
+			collision.gameObject.GetComponent<PlayerController>().Bounce(transform.parent.gameObject.GetComponent<WaveScript>().BouncePower);
+			script.disableCollision();
+		}
+
+		if(collision.gameObject.tag == "GuitarCollision") 
+		{
+			script.disableCollision();
+			script.setWeaponCollision();
 		}
 	}
 }

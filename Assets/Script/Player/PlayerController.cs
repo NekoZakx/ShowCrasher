@@ -79,6 +79,16 @@ public class PlayerController : MonoBehaviour {
 				playerAnimation.SetBool("Grounded", false);
 				rigidbody2D.velocity = new Vector2 (0, -jumpForce);
 			}
+
+
+			if(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
+			{				
+				transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = true;
+			}
+			else
+			{				
+				transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = false;
+			}
 		}
 		else
 		{
