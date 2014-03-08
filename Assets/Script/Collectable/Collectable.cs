@@ -41,6 +41,7 @@ public class Collectable : MonoBehaviour {
 	{
 		//TODO Add to player inventory
 		Player.GetComponent<PlayerInventory>().AddToInventory(new ObjectParam(nameOfObject, gameObject.GetComponent<SpriteRenderer>().sprite));
+		Destroy(gameObject);
 	}
 
 }

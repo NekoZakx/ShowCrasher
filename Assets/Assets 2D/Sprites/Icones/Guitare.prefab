@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   - 50: {fileID: 5000000}
+  - 60: {fileID: 6000000}
   m_Layer: 0
   m_Name: Guitare
   m_TagString: Untagged
@@ -44,6 +45,46 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!60 &6000000
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Poly:
+    m_Paths:
+    - - {x: .370000005, y: -.199999988}
+      - {x: .359999985, y: -.0599999987}
+      - {x: .289999992, y: .0700000003}
+      - {x: .219999999, y: .129999995}
+      - {x: .379999995, y: .329999983}
+      - {x: .439999998, y: .370000005}
+      - {x: .469999999, y: .479999989}
+      - {x: .469999999, y: .599999964}
+      - {x: .429999977, y: .620000005}
+      - {x: .409999996, y: .620000005}
+      - {x: .25999999, y: .459999979}
+      - {x: .119999997, y: .209999993}
+      - {x: .0599999987, y: .229999989}
+      - {x: .00999999978, y: .229999989}
+      - {x: -.129999995, y: .229999989}
+      - {x: -.229999989, y: .179999992}
+      - {x: -.359999985, y: .0700000003}
+      - {x: -.419999987, y: -.0700000003}
+      - {x: -.419999987, y: -.229999989}
+      - {x: -.419999987, y: -.25999999}
+      - {x: -.370000005, y: -.359999985}
+      - {x: -.25999999, y: -.479999989}
+      - {x: -.179999992, y: -.519999981}
+      - {x: -.0799999982, y: -.550000012}
+      - {x: .00999999978, y: -.550000012}
+      - {x: .00999999978, y: -.550000012}
+      - {x: .109999999, y: -.539999962}
+      - {x: .199999988, y: -.479999989}
+      - {x: .319999993, y: -.359999985}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94cc818f0170d1c459bb50eb35c8b3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfObject: 
+  nameOfObject: Guitar
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
