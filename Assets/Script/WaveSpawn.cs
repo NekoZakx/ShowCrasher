@@ -26,9 +26,11 @@ public class WaveSpawn : MonoBehaviour {
 	private float bouncePower;
 	private Vector2 initWavePosition;
 	private Vector2 initItemPosition;
+	private int ctr;
 	// Use this for initialization
 	void Awake()
 	{
+		ctr = 0;
 		itmHeight = new float[3];
 		itmHeight [0] = 8.0f;
 		itmHeight [1] = 12.0f;
@@ -87,8 +89,16 @@ public class WaveSpawn : MonoBehaviour {
 					size = RollDice(3);
 				}
 			}*/
-			itemSpawn = (GameObject)Instantiate(item, initItemPosition , Quaternion.identity);
-			itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
+			if (ctr==8)
+			{
+				itemSpawn = (GameObject)Instantiate(item, initItemPosition , Quaternion.identity);
+				itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
+				ctr = 0;
+			}
+			else
+			{
+				ctr++;
+			}
 			waveSpawn.GetComponent<WaveScript>().SetVelocity(CurrentVelocitySpawn);
 			waveSpawn.GetComponent<WaveScript>().BouncePower = bouncePower;
 			//waveList.Add (waveSpawn);
