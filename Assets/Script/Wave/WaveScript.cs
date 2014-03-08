@@ -77,7 +77,11 @@ public class WaveScript : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
-		
+
+		if(transform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))//this.animator.GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))
+		{
+			Destroy(this.gameObject);
+		}
 
 	}
 
