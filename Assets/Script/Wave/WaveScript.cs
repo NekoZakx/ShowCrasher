@@ -5,6 +5,7 @@ public class WaveScript : MonoBehaviour {
 
 	private float waveSpeed = -3f;
 	private float bouncePower = 10f;
+	public double hp;
 	private bool playerHautCollision = false;
 	private bool playerCoteCollision = false;
 	private bool playerWeaponCollision = false;

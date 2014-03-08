@@ -37,9 +37,39 @@ public class WaveSpawn : MonoBehaviour {
 	private int songSize = 60;
 	private int collectableGap = 8;
 	private int icollect = 0;
+	private double hp1;
+	private double hp2;
+	private double hp3;
+	private float damageTriangle = 1.0f;
+	private float damageCymbal = 3.0f;
+	private float damageTrumpet = 5.0f;
+	private float baseDamage = 5.0f;
+	private float nbCollectables;
+	private double nbTriangles;
+	private double nbCymbal;
+	private double nbTrumpet;
+	private double nbCollectablesToTake;
+	private double nbTrianglesToTake;
+	private double nbCymbalToTake;
+	private double nbTrumpetToTake;
+
 	// Use this for initialization
 	void Awake()
 	{
+		nbCollectables = songSize / collectableGap;
+		nbTriangles = round(0.5 * nbCollectables);
+		nbCymbal = round(0.33 * nbCollectables);
+		nbTrumpet = nbCollectables- (nbTriangles + nbCymbal);
+
+		nbCollectablesToTake = round (nbCollectables*0.75);
+		nbTrianglesToTake = round(0.5 * nbCollectablesToTake);
+		nbCymbalToTake = round(0.33 * nbCollectablesToTake);
+		nbTrumpetToTake = nbCollectablesToTake- (nbTrianglesToTake + nbCymbalToTake);
+
+		hp3 = round(nbTrianglesToTake * damageTriangle + nbCymbalToTake * damageCymbal + nbTrumpetToTake * damageTrumpet + 5);
+		hp2 = round(hp3 / 3 * 2); 
+		hp1 = round(hp3 / 3);
+
 		collectables = new ArrayList ();
 		ctr = 0;
 		itmHeight = new float[3];
@@ -49,6 +79,14 @@ public class WaveSpawn : MonoBehaviour {
 		waveHeight = -0.9f;
 		initWavePosition = transform.position; 
 		initItemPosition.x = transform.position.x+2; 
+		Debug.Log ("nbCollectablesToTake : " + nbCollectablesToTake);
+		Debug.Log ("nbTrianglesToTake : " + nbTrianglesToTake);
+		Debug.Log ("nbCymbalToTake : " + nbCymbalToTake);
+		Debug.Log ("nbTrumpetToTake : " + nbTrumpetToTake);
+		Debug.Log ("HP3 : " + hp3);
+		Debug.Log ("HP2 : " + hp2);
+		Debug.Log ("HP1 : " + hp1);
+
 		//waveList = new ArrayList();
 		//itmList = new ArrayList();
 	}
@@ -103,12 +141,15 @@ public class WaveSpawn : MonoBehaviour {
 				{
 				case 1:
 					CollectableSpawn = (GameObject)Instantiate(triangle, initItemPosition , Quaternion.identity);
+					waveSpawn.GetComponent<WaveScript>().hp = hp1;
 					break;
 				case 2 :
 					CollectableSpawn = (GameObject)Instantiate(cymbal, initItemPosition , Quaternion.identity);
+					waveSpawn.GetComponent<WaveScript>().hp = hp2;
 					break;
 				case 3 :
 					CollectableSpawn = (GameObject)Instantiate(trumpet, initItemPosition , Quaternion.identity);
+					waveSpawn.GetComponent<WaveScript>().hp = hp3;
 					break;
 				default:
 					break;
@@ -147,12 +188,19 @@ public class WaveSpawn : MonoBehaviour {
 			//itmList.RemoveAt(i);        
 		}
 	}*/
+	private int round(double number)
+	{
+		double rest = number - (int)number;
+		if (rest < 0.5) {
+			return (int)number;
+		}
+		else
+		{
+			return (int)number+1;
+		}
+	}
 	private bool determineCollectables()
 	{
-		float nbCollectables = songSize / collectableGap;
-		double nbTriangles = Math.Round(0.5 * nbCollectables);
-		double nbCymbal = Math.Round(0.33 * nbCollectables);
-		double nbTrumpet = Math.Round(0.17 * nbCollectables);
 		if (nbTriangles + nbCymbal + nbTrumpet == nbCollectables) {
 			for (int i=0; i<nbTriangles; i++)
 			{
