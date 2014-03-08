@@ -328,6 +328,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: 0
   jumpForce: 7
+  isFalling: 0
+  grounded: 0
+  jumpAnimation: {fileID: 0}
 --- !u!95 &1477344095
 Animator:
   serializedVersion: 2

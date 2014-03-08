@@ -72,5 +72,10 @@ public class Jump : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2(0, jumpForce + 2);
 		}
 
+		if (collision.contacts[0].collider.name == "CoteCollider") 
+		{
+			
+		}
+
 	}
 }
