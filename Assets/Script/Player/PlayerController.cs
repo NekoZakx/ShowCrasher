@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 	private bool isFalling = false;
 	private bool grounded = false;
 	protected Animator playerAnimation;
-	public float timer = 0.5f;
+	public float timer = 0.2f;
 
 	void Awake()
 	{
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 			isAttacking = true;
 			playerAnimation.SetBool ("Attack", true);
 			jump = false;
-			timer = 0.5f;
+			timer = 0.2f;
 		}
 
 		if (grounded) 
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && isInTheAir) 
 		{
-			timer = 0.5f;
+			timer = 0.2f;
 			isAttacking = true;
 			playerAnimation.SetBool ("Attack", true);
 			playerAnimation.SetBool("Grounded", false);
