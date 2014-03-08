@@ -17,7 +17,7 @@ public class PlayerCollision : MonoBehaviour {
 	{
 		if (collision.contacts[0].collider.name == "CoteCollider") 
 		{
-			
+
 		}
 	}
 }

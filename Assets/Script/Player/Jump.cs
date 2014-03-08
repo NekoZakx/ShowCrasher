@@ -5,7 +5,7 @@ public class Jump : MonoBehaviour {
 
 	public bool jump = false;
 
-	public float jumpForce = 5.0f;
+	public float jumpForce = 10.0f;
 	
 	private bool isFalling = false;
 	private bool grounded = false;
@@ -24,6 +24,7 @@ public class Jump : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+
 		Debug.Log ("testestetes");
 		if (Input.GetButtonDown("Jump") && grounded) 
 		{
@@ -67,6 +68,7 @@ public class Jump : MonoBehaviour {
 
 		if (collision.contacts[0].collider.name == "HautCollider") 
 		{
+
 			rigidbody2D.velocity = new Vector2(0, jumpForce + 2);
 		}
 

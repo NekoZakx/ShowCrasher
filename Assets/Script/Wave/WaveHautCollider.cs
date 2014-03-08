@@ -8,7 +8,6 @@ public class WaveHautCollider : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		gameObject.tag = "HautCollider";
 		script = transform.parent.gameObject.GetComponent<WaveScript>();
 	}
 
@@ -21,7 +20,6 @@ public class WaveHautCollider : MonoBehaviour {
 		
 		if(collision.gameObject.tag == "PlayerWeapon") 
 		{		
-
 			script.setWeaponCollision();
 		}
 	}
