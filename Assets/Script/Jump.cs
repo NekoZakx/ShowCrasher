@@ -63,5 +63,11 @@ public class Jump : MonoBehaviour {
 		{
 			grounded = true;
 		}
+
+		if (collision.gameObject.tag == "HautCollider") 
+		{
+
+		}
+
 	}
 }

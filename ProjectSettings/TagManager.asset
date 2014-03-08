@@ -4,9 +4,11 @@
 TagManager:
   tags:
   - 
-  - "Cot\xE9Collider"
+  - CoteCollider
   - Terrain
   - HautCollider
+  - 
+  - "Cot\xE9Collider"
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
