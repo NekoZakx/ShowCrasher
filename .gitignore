@@ -1,3 +1,7 @@
+Temp/
+Library/
+Assets/ShaderForge/
+Assets/Xffect/
 ShowCrasher-csharp.sln
 ShowCrasher.sln
 ShowCrasher.userprefs
@@ -7,9 +11,9 @@ Assembly-CSharp-firstpass-vs.csproj
 Assembly-CSharp-firstpass.csproj
 Assembly-UnityScript-firstpass-vs.unityproj
 Assembly-UnityScript-firstpass.unityproj
-Temp/
-Library/
-Assets/ShaderForge/
-Assets/Xffect/
 Assembly-CSharp-vs.csproj
 Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-Editor-vs.csproj
+Assembly-UnityScript.unityproj
+Assembly-UnityScript-vs.unityproj
