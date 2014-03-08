@@ -16,6 +16,7 @@ public class WaveHautCollider : MonoBehaviour {
 		if(collision.gameObject.tag == "Player") 
 		{		
 			script.setHautCollision();
+			collision.gameObject.GetComponent<PlayerController>().Bounce(transform.parent.gameObject.GetComponent<WaveScript>().BouncePower);
 		}
 		
 		if(collision.gameObject.tag == "PlayerWeapon") 

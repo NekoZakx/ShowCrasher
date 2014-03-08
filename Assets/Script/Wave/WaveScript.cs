@@ -4,6 +4,7 @@ using System.Collections;
 public class WaveScript : MonoBehaviour {
 
 	private float waveSpeed = -3f;
+	private float bouncePower = 100f;
 	private bool playerHautCollision = false;
 	private bool playerCoteCollision = false;
 	private bool playerWeaponCollision = false;
@@ -25,6 +26,21 @@ public class WaveScript : MonoBehaviour {
 	void Update () 
 	{	
 		rigidbody2D.velocity = new Vector2 (waveSpeed, 0f);
+	}
+
+	public void SetVelocity(float _vel)
+	{
+		waveSpeed = _vel;
+	}
+
+	public float BouncePower
+	{
+		get{
+			return bouncePower;
+		}
+		set{
+			bouncePower = value;
+		}
 	}
 
 	public void setHautCollision()

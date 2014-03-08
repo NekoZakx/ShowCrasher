@@ -16,6 +16,7 @@ public class WaveCoteCollider : MonoBehaviour
 		if(collision.gameObject.tag == "Player") 
 		{		
  			script.setCoteCollision();
+			collision.gameObject.GetComponent<PlayerController>().HitWall();
 		}
 	}
 }

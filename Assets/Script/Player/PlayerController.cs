@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool jump = false;
 
-	public float jumpForce = 10.0f;
+	public float jumpForce = 100000000.0f;
 	
 	private bool isFalling = false;
 	private bool grounded = false;
@@ -66,16 +66,15 @@ public class PlayerController : MonoBehaviour {
 			grounded = true;
 		}
 
-		if (collision.contacts[0].collider.name == "HautCollider") 
-		{
+	}
 
-			rigidbody2D.velocity = new Vector2(0, jumpForce + 2);
-		}
+	public void Bounce(float _vel)
+	{
+		rigidbody2D.velocity = new Vector2(0, jumpForce + _vel);
+	}
 
-		if (collision.contacts[0].collider.name == "CoteCollider") 
-		{
-			Debug.Log ("Cote Collider");
-		}
-
+	public void HitWall()
+	{
+		Debug.Log ("Cote Collider");
 	}
 }

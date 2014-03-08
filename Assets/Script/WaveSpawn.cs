@@ -22,6 +22,7 @@ public class WaveSpawn : MonoBehaviour {
 	private Vector2 wavePosition;
 	private Vector2 itmPosition;
 	private float[] itmHeight;
+	private float CurrentVelocitySpawn;
 
 	// Use this for initialization
 	void Awake()
@@ -45,7 +46,7 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-
+		CurrentVelocitySpawn = -10f;
 		timer += Time.deltaTime;
 		Debug.Log ("FixedUpdate");
 		if(timer >= timeSpawn)
@@ -89,6 +90,8 @@ public class WaveSpawn : MonoBehaviour {
 				}
 			}
 			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
+			itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
+			waveSpawn.GetComponent<WaveScript>().SetVelocity(CurrentVelocitySpawn);
 			waveList.Add (waveSpawn);
 			itmList.Add (itemSpawn);
 			timer = 0.0f;

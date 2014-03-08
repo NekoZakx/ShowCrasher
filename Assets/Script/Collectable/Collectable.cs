@@ -7,13 +7,11 @@ using System.Collections;
 public class Collectable : MonoBehaviour {
 
 	public string nameOfObject;
-	private float velocity;
-	private float CollectableSpeed = -3f;
+	private float velocity = -3f;
 
 	void FixedUpdate()
 	{
-		//rigidbody.velocity = new Vector3(velocity,0,0);
-		rigidbody2D.velocity = new Vector2 (CollectableSpeed, 0f);
+		rigidbody2D.velocity = new Vector2(velocity,0);
 	}
 
 	public void SetVelocity(float _vel)
