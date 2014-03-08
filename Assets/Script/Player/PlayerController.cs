@@ -3,13 +3,15 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public bool jump = false;
-
+	private bool jump = false;
+	private bool isAttacking = false;
 	public float jumpForce = 100000000.0f;
+	private bool isInTheAir = false;
 	
 	private bool isFalling = false;
 	private bool grounded = false;
-	protected Animator jumpAnimation;
+	protected Animator playerAnimation;
+	public float timer = 0.5f;
 
 	void Awake()
 	{
@@ -18,24 +20,36 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		jumpAnimation = GetComponent<Animator>();
+		playerAnimation = GetComponent<Animator>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetButtonDown("Jump") && grounded) 
+		timer -= Time.deltaTime;
+		if (Input.GetButtonDown ("Jump") && grounded) 
 		{
 			jump = true;
 			grounded = false;
-			jumpAnimation.SetBool("Jump", true);
-			jumpAnimation.SetBool("Grounded", false);
+		} 
+
+		if (jump && !grounded) 
+		{
+			isInTheAir = true;
+		}
+
+		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && grounded) 
+		{
+			isAttacking = true;
+			playerAnimation.SetBool ("Attack", true);
+			timer = 0.5f;
 		}
 
 		if (grounded) 
 		{
-			jumpAnimation.SetBool("Jump", false);
-			jumpAnimation.SetBool("Grounded", true);
+			playerAnimation.SetBool("Jump", false);
+			playerAnimation.SetBool("Grounded", true);
+			isInTheAir = false;
 		}
 
 		if(rigidbody2D.velocity.y < 0)
@@ -46,15 +60,32 @@ public class PlayerController : MonoBehaviour {
 		{
 			isFalling = false;
 		}
-	}
 
+		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && isInTheAir) 
+		{
+			timer = 0.5f;
+			isAttacking = true;
+			playerAnimation.SetBool ("Attack", true);
+			playerAnimation.SetBool("Grounded", false);
+			rigidbody2D.velocity = new Vector2 (0, -jumpForce);
+		}
+	}
+	
 	void FixedUpdate()
 	{
 		if (jump)//Si on peut sauter. 
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpForce);
 			jump = false;
+			playerAnimation.SetBool("Jump", true);
+			playerAnimation.SetBool("Grounded", false);
 		}
+
+		if (isAttacking)
+		{
+			isAttacking = false;
+			playerAnimation.SetBool ("Attack", false);
+		} 
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
