@@ -26,6 +26,7 @@ public class WaveScript : MonoBehaviour {
 	void Update () 
 	{	
 		rigidbody2D.velocity = new Vector2 (waveSpeed, 0f);
+		WaveMaintenance ();
 	}
 
 	public void SetVelocity(float _vel)
@@ -69,5 +70,12 @@ public class WaveScript : MonoBehaviour {
 	{
 		transform.GetChild (0).GetComponent<BoxCollider2D> ().enabled = false;
 		transform.GetChild (1).GetComponent<BoxCollider2D> ().enabled = false;
+	}
+	void WaveMaintenance()
+	{
+		if (transform.position.x < -30.0f)
+		{
+			Destroy (gameObject);
+		}
 	}
 }
