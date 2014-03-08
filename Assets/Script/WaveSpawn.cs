@@ -14,7 +14,7 @@ public class WaveSpawn : MonoBehaviour {
 	//private ArrayList waveList;
 	//private ArrayList itmList;
 	private float timer = 0.0f;
-	private float timeSpawn = 2.0f;
+	private float timeSpawn = 0.5f;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 	private int size = 1;
 	private GameObject waveSpawn;
@@ -23,14 +23,15 @@ public class WaveSpawn : MonoBehaviour {
 	private Vector2 itmPosition;
 	private float[] itmHeight;
 	private float CurrentVelocitySpawn;
+	private float bouncePower;
 
 	// Use this for initialization
 	void Awake()
 	{
 		itmHeight = new float[3];
-		itmHeight [0] = 1.0f;
-		itmHeight [1] = 4.0f;
-		itmHeight [2] = 8.0f;
+		itmHeight [0] = 8.0f;
+		itmHeight [1] = 12.0f;
+		itmHeight [2] = 16.0f;
 		
 		//waveList = new ArrayList();
 		//itmList = new ArrayList();
@@ -46,7 +47,7 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		CurrentVelocitySpawn = -10f;
+		CurrentVelocitySpawn = -15f;
 		timer += Time.deltaTime;
 		Debug.Log ("FixedUpdate");
 		if(timer >= timeSpawn)
@@ -55,43 +56,38 @@ public class WaveSpawn : MonoBehaviour {
 			switch(size)
 			{
 			case 1:
-				wavePosition = new Vector2(3.0f,-0.9f);
-				itmPosition = new Vector2(3.0f,itmHeight[0]);
+				wavePosition = new Vector2(30.0f,-0.9f);
+				itmPosition = new Vector2(32.0f,itmHeight[0]);
 				waveSpawn = (GameObject)Instantiate(wave1, wavePosition , Quaternion.identity);
-				do{
-					timeSpawn = RollDice(5);
-				}while(timeSpawn==1);
+				bouncePower = 8;
 				break;
 			case 2:
-				wavePosition = new Vector2(3.0f,0.1f);
-				itmPosition = new Vector2(3.0f,itmHeight[1]);
+				wavePosition = new Vector2(30.0f,0.1f);
+				itmPosition = new Vector2(32.0f,itmHeight[1]);
 				waveSpawn = (GameObject)Instantiate(wave2, wavePosition, Quaternion.identity);
-				do{
-					timeSpawn = RollDice(5);
-				}while(timeSpawn==1);
+				bouncePower = 13;
 				break;
 			case 3:
-				wavePosition = new Vector2(3.0f,1.5f);
-				itmPosition = new Vector2(3.0f,itmHeight[2]);
+				wavePosition = new Vector2(30.0f,1.5f);
+				itmPosition = new Vector2(32.0f,itmHeight[2]);
 				waveSpawn = (GameObject)Instantiate(wave3, wavePosition, Quaternion.identity);
-				do{
-					timeSpawn = RollDice(5);
-				}while(timeSpawn<=3);
+				bouncePower = 18;
 				break;
 			default:
 				break;
 			}
 			size = RollDice(3);
-			if (timeSpawn!=2)
+			/*if (timeSpawn!=2)
 			{
 				while(size==3)
 				{
 					size = RollDice(3);
 				}
-			}
+			}*/
 			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
 			itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
 			waveSpawn.GetComponent<WaveScript>().SetVelocity(CurrentVelocitySpawn);
+			waveSpawn.GetComponent<WaveScript>().BouncePower = bouncePower;
 			//waveList.Add (waveSpawn);
 			//itmList.Add (itemSpawn);
 			timer = 0.0f;
