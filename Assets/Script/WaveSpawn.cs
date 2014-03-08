@@ -14,7 +14,7 @@ public class WaveSpawn : MonoBehaviour {
 	private ArrayList waveList;
 	private ArrayList itmList;
 	private float timer = 0.0f;
-	private float timeSpawn = 1.0f;
+	private float timeSpawn = 2.0f;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 	private int size = 1;
 	private GameObject waveSpawn;
@@ -50,7 +50,7 @@ public class WaveSpawn : MonoBehaviour {
 		Debug.Log ("FixedUpdate");
 		if(timer >= timeSpawn)
 		{
-			size = RollDice(3);
+
 			switch(size)
 			{
 			case 1:
@@ -80,6 +80,7 @@ public class WaveSpawn : MonoBehaviour {
 			default:
 				break;
 			}
+			size = RollDice(3);
 			itemSpawn = (GameObject)Instantiate(item, itmPosition , Quaternion.identity);
 			waveList.Add (waveSpawn);
 			itmList.Add (itemSpawn);
