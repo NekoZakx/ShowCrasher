@@ -90,5 +90,32 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
+    - name: Jump_fall_cycle_mi_boboche_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Jump_fall_cycle_mi_boboche_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: Jump_fall_cycle_mi_boboche_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
