@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 		{
 			jump = true;
 			grounded = false;
+			playerAnimation.SetBool("Jump", true);
+			playerAnimation.SetBool("Grounded", false);
 		} 
 
 		if (jump && !grounded) 
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			isAttacking = true;
 			playerAnimation.SetBool ("Attack", true);
+			playerAnimation.SetBool("Grounded", true);
 			jump = false;
 			timer = 0.2f;
 		}
@@ -54,14 +57,14 @@ public class PlayerController : MonoBehaviour {
 			isInTheAir = false;
 		}
 
-		if(rigidbody2D.velocity.y < 0)
+		/*if(rigidbody2D.velocity.y < 0)
 		{
 			isFalling = true;
 		}
 		else
 		{
 			isFalling = false;
-		}
+		}*/
 
 		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && isInTheAir) 
 		{
@@ -79,15 +82,20 @@ public class PlayerController : MonoBehaviour {
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpForce);
 			jump = false;
-			playerAnimation.SetBool("Jump", true);
-			playerAnimation.SetBool("Grounded", false);
 		}
 
 		if (isAttacking)
 		{
 			isAttacking = false;
 			playerAnimation.SetBool ("Attack", false);
-		} 
+		}
+
+		if (rigidbody2D.velocity.y == 0 && isInTheAir) 
+		{
+			jump = false;
+			isInTheAir = false;
+			grounded = true;
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -95,6 +103,7 @@ public class PlayerController : MonoBehaviour {
 		if (collision.gameObject.tag == "Terrain") 
 		{
 			grounded = true;
+			jump = false;
 		}
 
 	}
