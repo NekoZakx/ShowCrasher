@@ -104,6 +104,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70badfbc0e3a90b4fa2348793e6195c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSpeed: -3
+  playerHautCollision: 0
+  playerCoteCollision: 0
+  playerWeaponCollision: 0
+  hautCollider: {fileID: 0}
+  script: {fileID: 0}
 --- !u!50 &153608803
 Rigidbody2D:
   m_ObjectHideFlags: 0
