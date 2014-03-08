@@ -50,7 +50,6 @@ public class WaveSpawn : MonoBehaviour {
 		Debug.Log ("FixedUpdate");
 		if(timer >= timeSpawn)
 		{
-			timeSpawn = RollDice(5);
 			size = RollDice(3);
 			switch(size)
 			{
@@ -58,16 +57,25 @@ public class WaveSpawn : MonoBehaviour {
 				wavePosition = new Vector2(3.0f,-0.9f);
 				itmPosition = new Vector2(3.0f,itmHeight[0]);
 				waveSpawn = (GameObject)Instantiate(wave1, wavePosition , Quaternion.identity);
+				do{
+					timeSpawn = RollDice(5);
+				}while(timeSpawn==1);
 				break;
 			case 2:
 				wavePosition = new Vector2(3.0f,0.1f);
 				itmPosition = new Vector2(3.0f,itmHeight[1]);
 				waveSpawn = (GameObject)Instantiate(wave2, wavePosition, Quaternion.identity);
+				do{
+					timeSpawn = RollDice(5);
+				}while(timeSpawn<=1);
 				break;
 			case 3:
 				wavePosition = new Vector2(3.0f,1.5f);
 				itmPosition = new Vector2(3.0f,itmHeight[2]);
 				waveSpawn = (GameObject)Instantiate(wave3, wavePosition, Quaternion.identity);
+				do{
+					timeSpawn = RollDice(5);
+				}while(timeSpawn<=3);
 				break;
 			default:
 				break;
