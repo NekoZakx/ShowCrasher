@@ -17,6 +17,7 @@ public class PlayerInventory : MonoBehaviour {
 
 	public void AddToInventory(ObjectParam newObject)
 	{
+		Debug.Log(newObject.name);
 		objects.Add(newObject);
 	}
 }

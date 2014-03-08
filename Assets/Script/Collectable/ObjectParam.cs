@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ObjectParam {
 
-	private string name;
+	public string name;
 	private Sprite sprite;
 
 	// Use this for initialization

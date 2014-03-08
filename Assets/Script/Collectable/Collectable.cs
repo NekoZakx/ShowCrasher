@@ -12,6 +12,7 @@ public class Collectable : MonoBehaviour {
 	void FixedUpdate()
 	{
 		rigidbody2D.velocity = new Vector2(velocity,0);
+		CollectableMaintenance ();
 	}
 
 	public void SetVelocity(float _vel)
@@ -41,6 +42,14 @@ public class Collectable : MonoBehaviour {
 	{
 		//TODO Add to player inventory
 		Player.GetComponent<PlayerInventory>().AddToInventory(new ObjectParam(nameOfObject, gameObject.GetComponent<SpriteRenderer>().sprite));
+		Destroy(gameObject);
+	}
+	void CollectableMaintenance()
+	{
+		if (transform.position.x < -30.0f)
+		{
+			Destroy (gameObject);
+		}
 	}
 
 }
