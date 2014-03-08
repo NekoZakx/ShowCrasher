@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Jump : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	public bool jump = false;
 
@@ -74,7 +74,7 @@ public class Jump : MonoBehaviour {
 
 		if (collision.contacts[0].collider.name == "CoteCollider") 
 		{
-			
+			Debug.Log ("Cote Collider");
 		}
 
 	}

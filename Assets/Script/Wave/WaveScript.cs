@@ -37,7 +37,7 @@ public class WaveScript : MonoBehaviour {
 
 	public void setCoteCollision()
 	{		
-		Debug.Log ("Cote Collider");
+		//Debug.Log ("Cote Collider");
 		playerCoteCollision = true;
 		script.decreaseScore(10);
 	}
