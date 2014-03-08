@@ -6,14 +6,12 @@ public class Jump : MonoBehaviour {
 	public bool jump = false;
 
 	public float jumpForce = 5.0f;
-
-	private Transform groundDetector;
-	private bool grounded = false;
+	
 	private bool isFalling = false;
+	private bool grounded = false;
 
 	void Awake()
 	{
-		groundDetector = transform.Find("GroundDetector");
 	}
 
 	// Use this for initialization
@@ -24,11 +22,10 @@ public class Jump : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		grounded = Physics2D.Linecast(transform.position, groundDetector.position, 1 << LayerMask.NameToLayer("Terrain"));//Ligne qui check si on a touché le sol.
-
 		if (Input.GetButtonDown("Jump") && grounded) 
 		{
 			jump = true;
+			grounded = false;
 		}
 
 		if(rigidbody2D.velocity.y < 0)
@@ -47,6 +44,14 @@ public class Jump : MonoBehaviour {
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpForce);
 			jump = false;
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Terrain") 
+		{
+			grounded = true;
 		}
 	}
 }
