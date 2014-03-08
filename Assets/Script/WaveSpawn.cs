@@ -4,13 +4,16 @@ using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 using System.Collections;
+using System.Collections.Generic;
 
 public class WaveSpawn : MonoBehaviour {
 
 	public GameObject wave1;
 	public GameObject wave2;
 	public GameObject wave3;
-	public GameObject item;
+	public GameObject triangle;
+	public GameObject cymbal;
+	public GameObject trumpet;
 	//private ArrayList waveList;
 	//private ArrayList itmList;
 	private float timer = 0.0f;
@@ -18,7 +21,10 @@ public class WaveSpawn : MonoBehaviour {
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 	private int size = 1;
 	private GameObject waveSpawn;
-	private GameObject itemSpawn;
+	private GameObject triangleSpawn;
+	private GameObject cymbalSpawn;
+	private GameObject trumpetSpawn;
+	private GameObject CollectableSpawn;
 	private Vector2 wavePosition;
 	private float[] itmHeight;
 	private float waveHeight;
@@ -27,9 +33,14 @@ public class WaveSpawn : MonoBehaviour {
 	private Vector2 initWavePosition;
 	private Vector2 initItemPosition;
 	private int ctr;
+	private ArrayList collectables;
+	private int songSize = 60;
+	private int collectableGap = 8;
+	private int icollect = 0;
 	// Use this for initialization
 	void Awake()
 	{
+		collectables = new ArrayList ();
 		ctr = 0;
 		itmHeight = new float[3];
 		itmHeight [0] = 8.0f;
@@ -43,7 +54,10 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void Start () {
 		//ClearGame ();
-
+		if (!determineCollectables ()) {
+			Debug.Log ("ERREUR DANS DETERMINECOLLECTABLES!!!!");
+		}
+		Shuffle(collectables);
 	}
 	
 	// Update is called once per frame
@@ -82,17 +96,25 @@ public class WaveSpawn : MonoBehaviour {
 				break;
 			}
 			size = RollDice(3);
-			/*if (timeSpawn!=2)
+
+			if (ctr==collectableGap && icollect<collectables.Count)
 			{
-				while(size==3)
+				switch((int)collectables[icollect++])
 				{
-					size = RollDice(3);
+				case 1:
+					CollectableSpawn = (GameObject)Instantiate(triangle, initItemPosition , Quaternion.identity);
+					break;
+				case 2 :
+					CollectableSpawn = (GameObject)Instantiate(cymbal, initItemPosition , Quaternion.identity);
+					break;
+				case 3 :
+					CollectableSpawn = (GameObject)Instantiate(trumpet, initItemPosition , Quaternion.identity);
+					break;
+				default:
+					break;
 				}
-			}*/
-			if (ctr==8)
-			{
-				itemSpawn = (GameObject)Instantiate(item, initItemPosition , Quaternion.identity);
-				itemSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
+
+				CollectableSpawn.GetComponent<Collectable>().SetVelocity(CurrentVelocitySpawn);
 				ctr = 0;
 			}
 			else
@@ -125,6 +147,46 @@ public class WaveSpawn : MonoBehaviour {
 			//itmList.RemoveAt(i);        
 		}
 	}*/
+	private bool determineCollectables()
+	{
+		float nbCollectables = songSize / collectableGap;
+		double nbTriangles = Math.Round(0.5 * nbCollectables);
+		double nbCymbal = Math.Round(0.33 * nbCollectables);
+		double nbTrumpet = Math.Round(0.17 * nbCollectables);
+		if (nbTriangles + nbCymbal + nbTrumpet == nbCollectables) {
+			for (int i=0; i<nbTriangles; i++)
+			{
+				collectables.Add (1);
+			}
+			for (int i=0; i<nbCymbal; i++)
+			{
+				collectables.Add (2);
+			}
+			for (int i=0; i<nbTrumpet; i++)
+			{
+				collectables.Add (3);
+			}
+			return true;
+		}
+		else
+			return false;
+	}
+	public static void Shuffle( ArrayList list)
+	{
+		byte size = (byte)list.Count;
+		int n = --size;
+		int newpos;
+		int temp;
+
+		while (n+1 > 1)
+		{
+			newpos = RollDice(size);
+			temp = (int)list[newpos];
+			list[newpos] = list[n];
+			list[n] = temp;
+			n--;
+		}
+	}
 	public static byte RollDice(byte numberSides)
 	{
 		if (numberSides <= 0)
