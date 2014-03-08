@@ -104,12 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70badfbc0e3a90b4fa2348793e6195c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveSpeed: -3
-  playerHautCollision: 0
-  playerCoteCollision: 0
-  playerWeaponCollision: 0
-  hautCollider: {fileID: 0}
-  script: {fileID: 0}
 --- !u!50 &153608803
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -492,6 +486,48 @@ Animator:
   m_ApplyRootMotion: 0
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!1 &1785697413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1785697415}
+  - 114: {fileID: 1785697414}
+  m_Layer: 0
+  m_Name: MasterObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1785697414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785697413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc574df1922f5d4aada3f81ac1ffcbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave1: {fileID: 100000, guid: 8914e2bd5bfeec342a3e6c98589fccb3, type: 2}
+  wave2: {fileID: 100000, guid: 93ef1402cb7b2e942be9cad052694632, type: 2}
+  wave3: {fileID: 100000, guid: 205c61bcbcfeec840b7a3d0160f0d491, type: 2}
+  item: {fileID: 100000, guid: 1f6df85c570846b4eb05ebf6570537a7, type: 2}
+--- !u!4 &1785697415
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785697413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.50436306, y: -1.08405876, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &2035235424
 GameObject:
   m_ObjectHideFlags: 0
