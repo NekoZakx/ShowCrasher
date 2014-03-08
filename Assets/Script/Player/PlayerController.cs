@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			isAttacking = true;
 			playerAnimation.SetBool ("Attack", true);
+			jump = false;
 			timer = 0.5f;
 		}
 
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			playerAnimation.SetBool("Jump", false);
 			playerAnimation.SetBool("Grounded", true);
+			jump = false;
 			isInTheAir = false;
 		}
 
