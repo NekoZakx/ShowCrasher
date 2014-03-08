@@ -11,10 +11,12 @@ public class Score : MonoBehaviour
 	public float timer = 6.0f;
 	public Font myFont;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
+	private Stats playerStats;
 
 	// Use this for initialization
 	void Start () {
 		score = 0;
+		playerStats = new Stats ();
 	}
 	
 	// Update is called once per frame
@@ -83,7 +85,10 @@ public class Score : MonoBehaviour
 
 	void OnGUI()
 	{
-		GUI.skin.font = myFont;
-		GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + score);
+		if(!playerStats.endOfGame)
+		{
+			GUI.skin.font = myFont;
+			GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + score);
+		}
 	}
 }

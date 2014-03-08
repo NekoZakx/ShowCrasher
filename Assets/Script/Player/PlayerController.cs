@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private bool grounded = false;
 	protected Animator playerAnimation;
 	public float timer = 0.2f;
+	public float staggerTimmer = 0.0f;
 
 	void Awake()
 	{
@@ -27,52 +28,71 @@ public class PlayerController : MonoBehaviour {
 	void Update () 
 	{
 		timer -= Time.deltaTime;
-		if (Input.GetButtonDown ("Jump") && grounded) 
-		{
-			jump = true;
-			grounded = false;
-			playerAnimation.SetBool("Jump", true);
-			playerAnimation.SetBool("Grounded", false);
-		} 
 
-		if (jump && !grounded) 
+		if(staggerTimmer <= 0.0f)
 		{
-			isInTheAir = true;
-		}
+			playerAnimation.SetBool ("Stagger", false);
+			if (Input.GetButtonDown ("Jump") && grounded) 
+			{
+				jump = true;
+				grounded = false;
+				playerAnimation.SetBool("Jump", true);
+				playerAnimation.SetBool("Grounded", false);
+			} 
 
-		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && grounded) 
-		{
-			isAttacking = true;
-			playerAnimation.SetBool ("Attack", true);
-			playerAnimation.SetBool("Grounded", true);
-			jump = false;
-			timer = 0.2f;
-		}
+			if (jump && !grounded) 
+			{
+				isInTheAir = true;
+			}
 
-		if (grounded) 
-		{
-			playerAnimation.SetBool("Jump", false);
-			playerAnimation.SetBool("Grounded", true);
-			jump = false;
-			isInTheAir = false;
-		}
+			if (Input.GetButtonDown ("Enter") && timer <= 0.0f && grounded) 
+			{
+				isAttacking = true;
+				playerAnimation.SetBool ("Attack", true);
+				playerAnimation.SetBool("Grounded", true);
+				jump = false;
+				timer = 0.2f;
+			}
 
-		/*if(rigidbody2D.velocity.y < 0)
-		{
-			isFalling = true;
+			if (grounded) 
+			{
+				playerAnimation.SetBool("Jump", false);
+				playerAnimation.SetBool("Grounded", true);
+				jump = false;
+				isInTheAir = false;
+			}
+
+			/*if(rigidbody2D.velocity.y < 0)
+			{
+				isFalling = true;
+			}
+			else
+			{
+				isFalling = false;
+			}*/
+
+			if (Input.GetButtonDown ("Enter") && timer <= 0.0f && isInTheAir) 
+			{
+				timer = 0.2f;
+				isAttacking = true;
+				playerAnimation.SetBool ("Attack", true);
+				playerAnimation.SetBool("Grounded", false);
+				rigidbody2D.velocity = new Vector2 (0, -jumpForce);
+			}
+
+
+			if(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
+			{				
+				transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = true;
+			}
+			else
+			{				
+				transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = false;
+			}
 		}
 		else
 		{
-			isFalling = false;
-		}*/
-
-		if (Input.GetButtonDown ("Enter") && timer <= 0.0f && isInTheAir) 
-		{
-			timer = 0.2f;
-			isAttacking = true;
-			playerAnimation.SetBool ("Attack", true);
-			playerAnimation.SetBool("Grounded", false);
-			rigidbody2D.velocity = new Vector2 (0, -jumpForce);
+			staggerTimmer -= Time.deltaTime;
 		}
 	}
 	
@@ -115,6 +135,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void HitWall()
 	{
-		Debug.Log ("Cote Collider");
+		playerAnimation.SetBool ("Stagger", true);
+		staggerTimmer = 0.1f;
 	}
 }

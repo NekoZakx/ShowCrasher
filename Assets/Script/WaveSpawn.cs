@@ -107,7 +107,7 @@ public class WaveSpawn : MonoBehaviour {
 		initWavePosition.y = waveHeight;
 		CurrentVelocitySpawn = -15f;
 		timer += Time.deltaTime;
-		Debug.Log ("FixedUpdate");
+		//Debug.Log ("FixedUpdate");
 		if(timer >= timeSpawn)
 		{
 
@@ -168,8 +168,8 @@ public class WaveSpawn : MonoBehaviour {
 			//itmList.Add (itemSpawn);
 			timer = 0.0f;
 		
-			Debug.Log ("TimeSpawn : " + timeSpawn);
-			Debug.Log ("Size : " + size);
+			//Debug.Log ("TimeSpawn : " + timeSpawn);
+			//Debug.Log ("Size : " + size);
 		}
 	}
 
