@@ -9,11 +9,16 @@ public class WaveScript : MonoBehaviour {
 	private bool playerWeaponCollision = false;
 
 	private BoxCollider2D hautCollider;
+
+	private Score script;
+
+
 	
 	// Use this for initialization
 	//lol
 	void Start () 
 	{	
+		script = GameObject.FindGameObjectWithTag("Terrain").GetComponent<Score>();
 	}
 	
 	// Update is called once per frame
@@ -26,18 +31,22 @@ public class WaveScript : MonoBehaviour {
 	{		
 		Debug.Log("Haut Collision");
 		playerHautCollision = true;
+		script.inscreaseScore(20);
+		 
 	}
 
 	public void setCoteCollision()
 	{		
 		Debug.Log ("Cote Collider");
 		playerCoteCollision = true;
+		script.decreaseScore(10);
 	}
 
 	public void setWeaponCollision()
 	{
 		Debug.Log("Collision Player Weapon");
 		playerWeaponCollision = true;
+		script.inscreaseScore(30);
 	}
 	
 }

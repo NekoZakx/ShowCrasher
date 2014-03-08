@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WaveHautCollider : MonoBehaviour {
 
-	public WaveScript script;
+	private WaveScript script;
 	
 	// Use this for initialization
 	void Start () 

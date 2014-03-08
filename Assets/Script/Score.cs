@@ -14,18 +14,18 @@ public class Score : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (score > 0) 
+		/*if (score > 0) 
 		{
 			score -= 30;
-		}
+		}*/
 	}
 
-	void inscreseScore(int newScore)
+	public void inscreaseScore(int newScore)
 	{
 		score += newScore;
 	}
 
-	void decreaseScore(int newScore)
+	public void decreaseScore(int newScore)
 	{
 		if (score - newScore > 0) 
 		{
