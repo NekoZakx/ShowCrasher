@@ -25,15 +25,48 @@ public class Chat : MonoBehaviour {
 		positiveMessage.Add ("So cool, big performance!");
 		positiveMessage.Add ("YEAH ROCK ON!");
 		positiveMessage.Add ("Best show ever!");
+		positiveMessage.Add ("Yeah! Now it's a good show!");
+		positiveMessage.Add ("This group suck! Nice stream!");
+		positiveMessage.Add ("You rub the show!");
+		positiveMessage.Add ("Marry me!");
+		positiveMessage.Add ("You're in my heart forever!");
+		positiveMessage.Add ("Not bad!");
+		positiveMessage.Add ("So Funny!");
+		positiveMessage.Add ("I love you!");
+		positiveMessage.Add ("OMFG, this shit rocks!");
+		positiveMessage.Add ("Rock on!");
 
 		negativeMessage.Add ("Crappy show!");
 		negativeMessage.Add ("You are SO BAD!");
 		negativeMessage.Add ("FAIL BIG NOOB!");
+		negativeMessage.Add ("So bad dude!");
+		negativeMessage.Add ("Dude, go home!");
+		negativeMessage.Add ("Are you playing something?");
+		negativeMessage.Add ("What Are you trying to do?");
+		negativeMessage.Add ("You suck!");
+		negativeMessage.Add ("Justin Bieber is better than you!");
+		negativeMessage.Add ("Shut the fuck up!");
+		negativeMessage.Add ("Fucking stupid bitch");
 
 		name.Add ("Pickles123: ");
 		name.Add ("Bobette505: ");
 		name.Add ("LifeIsHard342: ");
-		name.Add ("Orangina34: ");
+		name.Add ("Alpe Nismu: ");
+		name.Add ("Alva Gingras: ");
+		name.Add ("T-Bones92: ");
+		name.Add ("GodZilla177: ");
+		name.Add ("buster8: ");
+		name.Add ("necrophile4life: ");
+		name.Add ("Grampa14: ");
+		name.Add ("WashMePlz: ");
+		name.Add ("7UpepsiSuck: ");
+		name.Add ("Crappy9: ");
+		name.Add ("SexyKitten42: ");
+		name.Add ("YourMomInShorts3: ");
+		name.Add ("1337: ");
+		
+		
+		
 
 		chat = new CustomScrollView ();
 
