@@ -26,9 +26,10 @@ public class WaveHautCollider : MonoBehaviour
 		
 		if(collision.gameObject.tag == "GuitarCollision") 
 		{
+
 			script.disableCollision();
 			script.setWeaponCollision();
-			script.killWave();
+			script.dommageWave(collision.gameObject.transform.parent.gameObject.GetComponent<PlayerController>().attackPower);
 		}
 	}
 }

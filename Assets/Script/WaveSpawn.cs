@@ -71,6 +71,7 @@ public class WaveSpawn : MonoBehaviour {
 		hp2 = round(hp3 / 3 * 2); 
 		hp1 = round(hp3 / 3);
 
+
 		collectables = new ArrayList ();
 		ctr = 0;
 		itmHeight = new float[3];
@@ -112,18 +113,21 @@ public class WaveSpawn : MonoBehaviour {
 				initItemPosition.y = itmHeight [0];
 				waveSpawn = (GameObject)Instantiate(wave1, initWavePosition , Quaternion.identity);
 				bouncePower = 8;
+				waveSpawn.GetComponent<WaveScript>().hp = hp1;
 				break;
 			case 2:
 				initItemPosition.y = itmHeight [1];
 				initWavePosition.y+=1.0f;
 				waveSpawn = (GameObject)Instantiate(wave2, initWavePosition, Quaternion.identity);
 				bouncePower = 13;
+				waveSpawn.GetComponent<WaveScript>().hp = hp2;
 				break;
 			case 3:
 				initItemPosition.y = itmHeight [2];
 				initWavePosition.y+=2.1f;
 				waveSpawn = (GameObject)Instantiate(wave3, initWavePosition, Quaternion.identity);
 				bouncePower = 18;
+				waveSpawn.GetComponent<WaveScript>().hp = hp3;
 				break;
 			default:
 				break;
@@ -136,15 +140,15 @@ public class WaveSpawn : MonoBehaviour {
 				{
 				case 1:
 					CollectableSpawn = (GameObject)Instantiate(triangle, initItemPosition , Quaternion.identity);
-					waveSpawn.GetComponent<WaveScript>().hp = hp1;
+
 					break;
 				case 2 :
 					CollectableSpawn = (GameObject)Instantiate(cymbal, initItemPosition , Quaternion.identity);
-					waveSpawn.GetComponent<WaveScript>().hp = hp2;
+
 					break;
 				case 3 :
 					CollectableSpawn = (GameObject)Instantiate(trumpet, initItemPosition , Quaternion.identity);
-					waveSpawn.GetComponent<WaveScript>().hp = hp3;
+
 					break;
 				default:
 					break;

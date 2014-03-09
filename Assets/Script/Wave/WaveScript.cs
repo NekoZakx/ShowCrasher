@@ -15,7 +15,6 @@ public class WaveScript : MonoBehaviour {
 	private Score script;
 
 
-	
 	// Use this for initialization
 	//lol
 	void Start () 
@@ -90,9 +89,13 @@ public class WaveScript : MonoBehaviour {
 		GetComponent<Animator>().SetBool("Wave_jumped_on", true);
 	}
 
-	public void killWave()
-	{
-		
-		GetComponent<Animator>().SetBool("Kill_wave", true);
+	public void dommageWave(float dommageRecu)
+	{	
+		Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
+		hp -= dommageRecu;
+		if(hp <= 0)
+		{
+			GetComponent<Animator>().SetBool("Kill_wave", true);
+		}
 	}
 }

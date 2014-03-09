@@ -39,6 +39,11 @@ public class Score : MonoBehaviour
 	public void inscreaseScore(int newScore)
 	{
 		nbWaveDestroy++;
+
+		if(GlobalVariable.nbWaveComboMax  < nbWaveDestroy)
+		{
+			GlobalVariable.nbWaveComboMax = nbWaveDestroy;
+		}
 		score += nbWaveDestroy*newScore;
 	}
 
@@ -93,6 +98,7 @@ public class Score : MonoBehaviour
 		{
 			GUI.skin.font = myFont;
 			GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + score);
+			GUI.Label(new Rect(0,30,Screen.width,Screen.height), "Combo Wave Hit: " + nbWaveDestroy);
 		}
 	}
 }

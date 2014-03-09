@@ -15,6 +15,8 @@ public class WaveCoteCollider : MonoBehaviour
 	{			
 		if(collision.gameObject.tag == "Player") 
 		{	
+			
+			//Debug.Log(Time.time);
 			//Debug.Log(GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag == "stateRun");
 			script.setCoteCollision();
 			collision.gameObject.GetComponent<PlayerController>().HitWall();
@@ -25,7 +27,7 @@ public class WaveCoteCollider : MonoBehaviour
 		{
 			script.disableCollision();
 			script.setWeaponCollision();
-			script.killWave();
+			script.dommageWave(collision.gameObject.transform.parent.gameObject.GetComponent<PlayerController>().attackPower);
 		}
 	}
 }
