@@ -13,10 +13,24 @@ public class PlayerInventory : MonoBehaviour {
 	public Texture textureTriangle;
 	public Texture textureCymbal;
 	public Texture textureTrumpet;
+	private static bool btriangle;
+	private static bool bcymbal;
+	private static bool btrumpet;
+	public RuntimeAnimatorController CU;
+	public RuntimeAnimatorController CUC;
+	public RuntimeAnimatorController CUT;
+	public RuntimeAnimatorController C;
+	public RuntimeAnimatorController CCUT;
+	public RuntimeAnimatorController CT;
+	public RuntimeAnimatorController T;	
+
 
 	// Use this for initialization
 	void Start () {
 		objects = new ArrayList();
+		btriangle = false;
+		bcymbal = false;
+		btrumpet = false;
 	}
 	
 	// Update is called once per frame
@@ -33,11 +47,20 @@ public class PlayerInventory : MonoBehaviour {
 	{
 		objects.Add (newObject);
 		if (newObject.name.Equals("Triangle"))
+		{
 			nbTriangle++;
+			btriangle = true;
+		}
 		if (newObject.name.Equals("Cymbal"))
+		{
 			nbCymbal++;
+			bcymbal = true;
+		}
 		if (newObject.name.Equals("Trumpet"))
+		{
 			nbTrumpet++;
+			btrumpet = true;
+		}
 	}
 
 	void OnGUI()
@@ -51,5 +74,35 @@ public class PlayerInventory : MonoBehaviour {
 		GUI.DrawTexture (new Rect (offsetX+170, 0, 30, 30), textureTrumpet);
 		GUI.Label(new Rect(offsetX+205, 0, 45, 30), "" + nbTrumpet);
 		GUI.EndGroup();
+	}
+	void checkcollectables()
+	{
+		if (btriangle && btrumpet && bcymbal)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = CCUT;
+		}
+		else if (btrumpet && bcymbal)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = CUC;
+		}else if (btrumpet && btriangle)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = CUT;
+		}else if (btriangle && bcymbal)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = CT;
+		}else if (btrumpet)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = CU;
+		}else if (bcymbal)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = C;
+		}else if (btriangle)
+		{
+			GetComponent<Animator>().runtimeAnimatorController = T;
+		}
+		else
+		{
+
+		}
 	}
 }

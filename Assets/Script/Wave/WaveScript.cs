@@ -7,6 +7,14 @@ public class WaveScript : MonoBehaviour {
 	public RuntimeAnimatorController Size2;
 	public RuntimeAnimatorController Size1;
 
+	public RuntimeAnimatorController CU;
+	public RuntimeAnimatorController CUC;
+	public RuntimeAnimatorController CUT;
+	public RuntimeAnimatorController C;
+	public RuntimeAnimatorController CCUT;
+	public RuntimeAnimatorController CT;
+	public RuntimeAnimatorController T;	
+
 	private int size = 0;
 	private float waveSpeed = -3f;
 	private float bouncePower = 10f;
