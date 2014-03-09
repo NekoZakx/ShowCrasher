@@ -53,6 +53,13 @@ public class WaveSpawn : MonoBehaviour {
 	private double nbTrianglesToTake;
 	private double nbCymbalToTake;
 	private double nbTrumpetToTake;
+	private bool produceWave;
+
+	public bool ProduceWave
+	{
+		get{ return produceWave; }
+		set{ produceWave = value; }
+	}
 
 	// Use this for initialization
 	void Awake()
@@ -99,6 +106,8 @@ public class WaveSpawn : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
+		if(!produceWave) return;
+
 		initWavePosition.y = waveHeight;
 		initWavePosition.z = waveZ;
 		CurrentVelocitySpawn = -15f;
