@@ -3,9 +3,9 @@ using System.Collections;
 
 public class WaveScript : MonoBehaviour {
 
+	public double hp;
 	private float waveSpeed = -3f;
 	private float bouncePower = 10f;
-	public double hp;
 	private bool playerHautCollision = false;
 	private bool playerCoteCollision = false;
 	private bool playerWeaponCollision = false;
@@ -61,7 +61,7 @@ public class WaveScript : MonoBehaviour {
 
 	public void setWeaponCollision()
 	{
-		Debug.Log("Collision Player Weapon");
+		//Debug.Log("Collision Player Weapon");
 		playerWeaponCollision = true;
 		script.inscreaseScore(100);
 	}
@@ -77,5 +77,22 @@ public class WaveScript : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+
+		if(transform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))//this.animator.GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))
+		{
+			Destroy(this.gameObject);
+		}
+
+	}
+
+	public void jumpOnWave()
+	{
+		GetComponent<Animator>().SetBool("Wave_jumped_on", true);
+	}
+
+	public void killWave()
+	{
+		
+		GetComponent<Animator>().SetBool("Kill_wave", true);
 	}
 }

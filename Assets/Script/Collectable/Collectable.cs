@@ -34,6 +34,7 @@ public class Collectable : MonoBehaviour {
 		//Collide with player
 		if(collision.gameObject.tag == "Player")
 		{
+
 			IAmCollected(collision.gameObject);
 		}
 	}
@@ -43,6 +44,7 @@ public class Collectable : MonoBehaviour {
 		//TODO Add to player inventory
 		Player.GetComponent<PlayerInventory>().AddToInventory(new ObjectParam(nameOfObject, gameObject.GetComponent<SpriteRenderer>().sprite));
 		Destroy(gameObject);
+		CalculateAtkPower (Player);
 	}
 	void CollectableMaintenance()
 	{
@@ -50,6 +52,12 @@ public class Collectable : MonoBehaviour {
 		{
 			Destroy (gameObject);
 		}
+	}
+	void CalculateAtkPower(GameObject Player)
+	{
+		int power = 0;
+		power = (Player.GetComponent<PlayerInventory> ().nbTriangle * 1) + (Player.GetComponent<PlayerInventory> ().nbCymbal * 3) + (Player.GetComponent<PlayerInventory> ().nbTrumpet * 5) + 5;
+		Player.GetComponent<PlayerController> ().attackPower = power;
 	}
 
 }

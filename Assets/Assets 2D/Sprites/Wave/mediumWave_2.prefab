@@ -47,7 +47,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: mediumWave
+  m_Name: mediumWave_2
   m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,8 +60,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .593188286, y: -.269811213, z: 0}
-  m_LocalScale: {x: .333333343, y: .333333343, z: 1}
+  m_LocalPosition: {x: -.326738119, y: -.213072538, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400002
@@ -71,8 +71,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .968046665, y: -.78735435, z: 0}
-  m_LocalScale: {x: .333333343, y: .333333343, z: 1}
+  m_LocalPosition: {x: .577036619, y: -.8706792, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
 --- !u!4 &400004
@@ -82,8 +82,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.20002317, y: -.034201622, z: -5}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 4.95075178, y: .183365911, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 400002}
   - {fileID: 400000}
@@ -112,8 +112,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 3, y: .560000002}
-  m_Center: {x: -2, y: 2.5}
+  m_Size: {x: 1.79999995, y: .5}
+  m_Center: {x: .300000012, y: .400000006}
 --- !u!61 &6100002
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -123,8 +123,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: .200000003, y: 2.5}
-  m_Center: {x: -5, y: 2}
+  m_Size: {x: .200000003, y: 1.89999998}
+  m_Center: {x: -2.9000001, y: -.200000003}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -134,7 +134,7 @@ Animator:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3d7c30bbf2ff65a4f8fd394dffec257f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e8fe365998f273f45b7db0c527fceded, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: de8b0a5de8697b649b148e7627b2e02c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77a6948299551ee47a61806d6ad34871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

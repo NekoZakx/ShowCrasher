@@ -28,9 +28,10 @@ public class WaveSpawn : MonoBehaviour {
 	private Vector2 wavePosition;
 	private float[] itmHeight;
 	private float waveHeight;
+	private float waveZ;
 	private float CurrentVelocitySpawn;
 	private float bouncePower;
-	private Vector2 initWavePosition;
+	private Vector3 initWavePosition;
 	private Vector2 initItemPosition;
 	private int ctr;
 	private ArrayList collectables;
@@ -76,17 +77,10 @@ public class WaveSpawn : MonoBehaviour {
 		itmHeight [0] = 8.0f;
 		itmHeight [1] = 12.0f;
 		itmHeight [2] = 16.0f;
-		waveHeight = -0.9f;
+		waveHeight = -3f;
+		waveZ = 5;
 		initWavePosition = transform.position; 
-		initItemPosition.x = transform.position.x+2; 
-		Debug.Log ("nbCollectablesToTake : " + nbCollectablesToTake);
-		Debug.Log ("nbTrianglesToTake : " + nbTrianglesToTake);
-		Debug.Log ("nbCymbalToTake : " + nbCymbalToTake);
-		Debug.Log ("nbTrumpetToTake : " + nbTrumpetToTake);
-		Debug.Log ("HP3 : " + hp3);
-		Debug.Log ("HP2 : " + hp2);
-		Debug.Log ("HP1 : " + hp1);
-
+		initItemPosition.x = transform.position.x+2;
 		//waveList = new ArrayList();
 		//itmList = new ArrayList();
 	}
@@ -105,6 +99,7 @@ public class WaveSpawn : MonoBehaviour {
 	void FixedUpdate()
 	{
 		initWavePosition.y = waveHeight;
+		initWavePosition.z = waveZ;
 		CurrentVelocitySpawn = -15f;
 		timer += Time.deltaTime;
 		//Debug.Log ("FixedUpdate");
