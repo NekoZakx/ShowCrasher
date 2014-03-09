@@ -41,19 +41,12 @@ public class PlayerInventory : MonoBehaviour {
 		{
 			if (newObject.name.Equals("Triangle"))
 				ctrt++;
-		}
-
-		for(int i=0; i<objects.Count; i++)
-		{
 			if (newObject.name.Equals("Cymbal"))
 				ctrc++;
-		}
-
-		for(int i=0; i<objects.Count; i++)
-		{
 			if (newObject.name.Equals("Trumpet"))
 				ctrp++;
 		}
+
 		nbTriangle = ctrt;
 		nbCymbal = ctrc;
 		nbTrumpet = ctrp;
