@@ -24,12 +24,10 @@ public class PlayerInventory : MonoBehaviour {
 		int ctrc = 0;
 		int ctrp = 0;
 
-		Debug.Log(newObject.name);
 		objects.Add (newObject);
 
 		for(int i=0; i<objects.Count; i++)
 		{
-			Debug.Log(newObject.name.Equals("Triangle"));
 			if (newObject.name.Equals("Triangle"))
 				ctrt++;
 		}
