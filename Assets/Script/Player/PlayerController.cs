@@ -138,7 +138,6 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Terrain") 
 		{
-
 			LandSrc.Play();
 			grounded = true;
 			jump = false;
@@ -156,6 +155,7 @@ public class PlayerController : MonoBehaviour {
 	public void HitWall()
 	{
 		playerAnimation.SetBool ("Stagger", true);
+		GlobalVariable.showNegativeMessage = true;
 		staggerTimmer = 0.2f;
 		HitWallSrc.Play();
 	}
