@@ -27,7 +27,7 @@ public class SpotLight : MonoBehaviour {
 			mySpotLight[0].renderer.enabled = true;
 		}
 
-		coolDown2 -= Time.deltaTime;
+		/*coolDown2 -= Time.deltaTime;
 		if(coolDown2 <= 0.0f)
 		{
 			mySpotLight[1].renderer.enabled = false;
@@ -36,6 +36,6 @@ public class SpotLight : MonoBehaviour {
 		else if(coolDown2 <= 2.0f)
 		{
 			mySpotLight[1].renderer.enabled = true;
-		}
+		}*/
 	}
 }
