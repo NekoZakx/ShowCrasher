@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource HitWallSrc;
 	public AudioSource AttackSrc;
 
+	public RuntimeAnimatorController Cu;
+	public RuntimeAnimatorController CuC;
+	public RuntimeAnimatorController CuT;
+	public RuntimeAnimatorController C;
+	public RuntimeAnimatorController CCuT;
+	public RuntimeAnimatorController CT;
+	public RuntimeAnimatorController T;
 
 	void Awake()
 	{
@@ -95,10 +102,12 @@ public class PlayerController : MonoBehaviour {
 				if(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
 				{				
 					transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = true;
+					transform.Find("CollisionGuitar").GetComponent<SpriteRenderer>().enabled = true;
 				}
 				else
 				{				
 					transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = false;
+					transform.Find("CollisionGuitar").GetComponent<SpriteRenderer>().enabled = false;
 				}
 			}
 			else
