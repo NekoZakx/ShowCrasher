@@ -21,13 +21,8 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource HitWallSrc;
 	public AudioSource AttackSrc;
 
-	public RuntimeAnimatorController Cu;
-	public RuntimeAnimatorController CuC;
-	public RuntimeAnimatorController CuT;
-	public RuntimeAnimatorController C;
-	public RuntimeAnimatorController CCuT;
-	public RuntimeAnimatorController CT;
-	public RuntimeAnimatorController T;
+	private SpriteRenderer myAttackMesh;
+	private BoxCollider2D myAttackCollider;
 
 	void Awake()
 	{
@@ -38,6 +33,8 @@ public class PlayerController : MonoBehaviour {
 	void Start () 
 	{
 		playerAnimation = GetComponent<Animator>();
+		myAttackMesh = transform.Find("CollisionGuitar").GetComponent<SpriteRenderer>();
+		myAttackCollider = transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>();
 	}
 
 	// Update is called once per frame
@@ -100,14 +97,17 @@ public class PlayerController : MonoBehaviour {
 
 
 				if(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsTag("stateAttack"))
-				{				
-					transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = true;
-					transform.Find("CollisionGuitar").GetComponent<SpriteRenderer>().enabled = true;
-				}
-				else
-				{				
-					transform.Find("CollisionGuitar").GetComponent<BoxCollider2D>().enabled = false;
-					transform.Find("CollisionGuitar").GetComponent<SpriteRenderer>().enabled = false;
+				{		
+					Color myMeshOpacity = myAttackMesh.color;
+					myMeshOpacity.a = 1f;
+					myAttackMesh.color = myMeshOpacity;
+					myAttackCollider.enabled = true;
+				}else
+				{
+					Color myMeshOpacity = myAttackMesh.color;
+					myMeshOpacity.a = 0f;
+					myAttackMesh.color = myMeshOpacity;
+					myAttackCollider.enabled = false;
 				}
 			}
 			else
