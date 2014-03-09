@@ -98,6 +98,7 @@ public class WaveSpawn : MonoBehaviour {
 			Debug.Log ("ERREUR DANS DETERMINECOLLECTABLES!!!!");
 		}
 		Shuffle(collectables);
+		songSize = (int)GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().clip.length;
 	}
 	
 	// Update is called once per frame
@@ -121,7 +122,8 @@ public class WaveSpawn : MonoBehaviour {
 				initItemPosition.y = itmHeight [0];
 				waveSpawn = (GameObject)Instantiate(wave1, initWavePosition , Quaternion.identity);
 				bouncePower = 8;
-				waveSpawn.GetComponent<WaveScript>().hp = hp1;
+				//waveSpawn.GetComponent<WaveScript>().hp = hp1;
+				waveSpawn.GetComponent<WaveScript>().Size = 0;
 				break;
 			case 2:
 				initItemPosition.y = itmHeight [1];
@@ -129,6 +131,7 @@ public class WaveSpawn : MonoBehaviour {
 				waveSpawn = (GameObject)Instantiate(wave2, initWavePosition, Quaternion.identity);
 				bouncePower = 13;
 				waveSpawn.GetComponent<WaveScript>().hp = hp2;
+				waveSpawn.GetComponent<WaveScript>().Size = 1;
 				break;
 			case 3:
 				initItemPosition.y = itmHeight [2];
@@ -136,6 +139,7 @@ public class WaveSpawn : MonoBehaviour {
 				waveSpawn = (GameObject)Instantiate(wave3, initWavePosition, Quaternion.identity);
 				bouncePower = 18;
 				waveSpawn.GetComponent<WaveScript>().hp = hp3;
+				waveSpawn.GetComponent<WaveScript>().Size = 2;
 				break;
 			default:
 				break;

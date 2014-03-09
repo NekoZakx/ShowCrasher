@@ -3,7 +3,11 @@ using System.Collections;
 
 public class WaveScript : MonoBehaviour {
 
-	public double hp;
+	public double hp = 0.0;
+	public RuntimeAnimatorController Size2;
+	public RuntimeAnimatorController Size1;
+
+	private int size = 0;
 	private float waveSpeed = -3f;
 	private float bouncePower = 10f;
 	private bool playerHautCollision = false;
@@ -44,6 +48,16 @@ public class WaveScript : MonoBehaviour {
 		}
 	}
 
+	public int Size
+	{
+		get{
+			return size;
+		}
+		set{
+			size = value;
+		}
+	}
+
 	public void setHautCollision()
 	{		
 		//Debug.Log("Haut Collision");
@@ -74,7 +88,7 @@ public class WaveScript : MonoBehaviour {
 	}
 	void WaveMaintenance()
 	{
-		if (transform.position.x < -30.0f)
+		if (transform.position.x < -50.0f)
 		{
 			Destroy (gameObject);
 		}
@@ -94,10 +108,24 @@ public class WaveScript : MonoBehaviour {
 	public void dommageWave(float dommageRecu)
 	{	
 		//Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
-		hp -= 10000;
+		hp -= dommageRecu;
 		if(hp <= 0)
 		{
 			GetComponent<Animator>().SetBool("Kill_wave", true);
+		}else{
+			if(size != 0)
+			{
+				size--;
+				switch(size)
+				{
+					case 1:		GetComponent<Animator>().runtimeAnimatorController = Size2;
+						break;
+					case 0:		GetComponent<Animator>().runtimeAnimatorController = Size1;	
+						break;
+					default:	GetComponent<Animator>().runtimeAnimatorController = Size1;	
+						break;
+				}
+			}
 		}
 	}
 }

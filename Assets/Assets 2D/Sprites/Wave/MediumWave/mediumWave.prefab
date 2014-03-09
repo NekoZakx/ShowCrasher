@@ -173,6 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
+  Size2: {fileID: 0}
+  Size1: {fileID: 9100000, guid: 969f590973cdf364784af48f33d17c08, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
