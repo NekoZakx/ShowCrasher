@@ -64,9 +64,6 @@ public class Chat : MonoBehaviour {
 		name.Add ("SexyKitten42: ");
 		name.Add ("YourMomInShorts3: ");
 		name.Add ("1337: ");
-		
-		
-		
 
 		chat = new CustomScrollView ();
 
