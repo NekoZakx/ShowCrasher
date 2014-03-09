@@ -4,9 +4,10 @@ using System.Collections;
 public class EndGame : MonoBehaviour {
 
 	// Use this for initialization
-	AudioSource audio;
-	WaveSpawn master;
-	Animator playerAnimator; 
+	private AudioSource audio;
+	private WaveSpawn master;
+	private Animator playerAnimator; 
+	public Font myFont;
 
 	void Start () 
 	{
@@ -28,6 +29,19 @@ public class EndGame : MonoBehaviour {
 				GlobalVariable.endOfGame = true;
 			}
 
+		}
+	}
+
+	void OnGUI() 
+	{
+		if(GlobalVariable.endOfGame)
+		{
+			GUI.skin.font = myFont;
+			GUI.skin.label.alignment = TextAnchor.UpperCenter; 
+			if (GUI.Button(new Rect(Screen.height/1.8f, Screen.width/2, 200, 40), "Quitter"))
+			{
+				Application.Quit();			
+			}
 		}
 	}
 }
