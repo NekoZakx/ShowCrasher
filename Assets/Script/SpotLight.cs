@@ -7,12 +7,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SpotLight : MonoBehaviour {
-
+	
 	private GameObject[] mySpotLight;
 	private float coolDown1 = 2.0f;
 	private float coolDown2 = 4.0f;
+	private bool contraire = false;
+	private float rotationDeplacement = 0;
+	private int idSpotLight = 0;
+	
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
-
+	
 	// Use this for initialization
 	void Start () {
 		mySpotLight = GameObject.FindGameObjectsWithTag ("SpotLight");
@@ -21,7 +25,7 @@ public class SpotLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 		coolDown1 -= Time.deltaTime;
 		if(coolDown1 <= 0.0f)
 		{
@@ -32,35 +36,66 @@ public class SpotLight : MonoBehaviour {
 		{
 			mySpotLight[RollDice(3)].renderer.enabled = true;
 		}
-
-
-		switch(RollDice(4))
+		
+		if(idSpotLight != -1)
 		{
-			case 1:
-				if(mySpotLight[0].gameObject.transform.eulerAngles.z == 355)
+			if(contraire != true)
+			{
+				if(rotationDeplacement <= 5)
 				{
-					mySpotLight[0].gameObject.transform.Rotate(new Vector3(0,0,350));
+					rotationDeplacement += 0.4f;
+					
+					mySpotLight[idSpotLight].gameObject.transform.Rotate(new Vector3(0,0,-rotationDeplacement));
 				}
 				else
 				{
-				
-					mySpotLight[0].gameObject.transform.Rotate(new Vector3(0,0,355));
+					contraire = true;
+					rotationDeplacement = 0;
 				}
+			}
+			
+			
+			
+			if(contraire == true )
+			{
+				if(rotationDeplacement <= 5)
+				{
+					rotationDeplacement += 0.4f;
+					
+					mySpotLight[idSpotLight].gameObject.transform.Rotate(new Vector3(0,0,rotationDeplacement));
+				}
+				else
+				{
+					rotationDeplacement = 0;
+					contraire = false;
+					idSpotLight = -1;
+				}
+			}
+		}
+		if(idSpotLight == -1)
+		{
+			switch(RollDice(255))
+			{
+			case 1:
+				idSpotLight = 0;
 				break;
 			case 2:
-			mySpotLight[1].gameObject.transform.rotation = Quaternion.AngleAxis(20,Vector3.up);
+				idSpotLight = 1;
 				break;
 			case 3:
-			mySpotLight[2].gameObject.transform.rotation = Quaternion.AngleAxis(30,Vector3.up);
+				idSpotLight = 2;
 				break;
 			case 4:
-			mySpotLight[3].gameObject.transform.rotation = Quaternion.AngleAxis(40,Vector3.up);
+				idSpotLight = 3;
 				break;
-			default:
-				break;
-			
+			}
 		}
-
+		
+		
+		
+		
+		
+		
 		/*coolDown2 -= Time.deltaTime;
 		if(coolDown2 <= 0.0f)
 		{
