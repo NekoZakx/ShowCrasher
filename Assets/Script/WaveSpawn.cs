@@ -69,7 +69,7 @@ public class WaveSpawn : MonoBehaviour {
 		nbCymbal = round(0.33 * nbCollectables);
 		nbTrumpet = nbCollectables- (nbTriangles + nbCymbal);
 
-		nbCollectablesToTake = round (nbCollectables*0.75);
+		nbCollectablesToTake = round (nbCollectables*0.90);
 		nbTrianglesToTake = round(0.5 * nbCollectablesToTake);
 		nbCymbalToTake = round(0.33 * nbCollectablesToTake);
 		nbTrumpetToTake = nbCollectablesToTake- (nbTrianglesToTake + nbCymbalToTake);
