@@ -13,6 +13,8 @@ TagManager:
   - GuitarCollision
   - CrowdSound
   - Crowd
+  - Music
+  - SpotLight
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
