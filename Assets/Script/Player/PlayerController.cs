@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour {
 	public void HitWall()
 	{
 		playerAnimation.SetBool ("Stagger", true);
-		staggerTimmer = 0.1f;
+		staggerTimmer = 0.2f;
 		HitWallSrc.Play();
 	}
 }
