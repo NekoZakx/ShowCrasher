@@ -10,6 +10,8 @@ public class GlobalVariable : MonoBehaviour {
 	public static bool crowdGetOut = false;
 	public static bool endOfGame = false;
 	public static int  nbWaveDestroy;
+	public static bool showPositiveMessage = false;
+	public static bool showNegativeMessage = false;
 
 	void Start () 
 	{
