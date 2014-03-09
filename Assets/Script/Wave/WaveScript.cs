@@ -79,10 +79,10 @@ public class WaveScript : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		if(transform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))//this.animator.GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))
+		/*if(transform.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))//this.animator.GetCurrentAnimatorStateInfo(0).IsName("wave_explosion"))
 		{
 			Destroy(this.gameObject);
-		}
+		}*/
 
 	}
 
@@ -94,7 +94,7 @@ public class WaveScript : MonoBehaviour {
 	public void dommageWave(float dommageRecu)
 	{	
 		//Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
-		hp -= dommageRecu;
+		hp -= 10000;
 		if(hp <= 0)
 		{
 			GetComponent<Animator>().SetBool("Kill_wave", true);

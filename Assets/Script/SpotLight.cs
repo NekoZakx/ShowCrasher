@@ -33,6 +33,34 @@ public class SpotLight : MonoBehaviour {
 			mySpotLight[RollDice(3)].renderer.enabled = true;
 		}
 
+
+		switch(RollDice(4))
+		{
+			case 1:
+				if(mySpotLight[0].gameObject.transform.eulerAngles.z == 355)
+				{
+					mySpotLight[0].gameObject.transform.Rotate(new Vector3(0,0,350));
+				}
+				else
+				{
+				
+					mySpotLight[0].gameObject.transform.Rotate(new Vector3(0,0,355));
+				}
+				break;
+			case 2:
+			mySpotLight[1].gameObject.transform.rotation = Quaternion.AngleAxis(20,Vector3.up);
+				break;
+			case 3:
+			mySpotLight[2].gameObject.transform.rotation = Quaternion.AngleAxis(30,Vector3.up);
+				break;
+			case 4:
+			mySpotLight[3].gameObject.transform.rotation = Quaternion.AngleAxis(40,Vector3.up);
+				break;
+			default:
+				break;
+			
+		}
+
 		/*coolDown2 -= Time.deltaTime;
 		if(coolDown2 <= 0.0f)
 		{
