@@ -110,17 +110,13 @@ public class PlayerController : MonoBehaviour {
 		{
 			rigidbody2D.velocity = new Vector2(0, jumpForce);
 
-			if(!AttackSrc.isPlaying)
-			{
-				JumpSrc.Play();
-			}
+			JumpSrc.Play();
 			jump = false;
 		}
 
 		if (isAttacking)
 		{
-			if(!AttackSrc.isPlaying)
-				AttackSrc.Play();
+			AttackSrc.Play();
 
 			isAttacking = false;
 			playerAnimation.SetBool ("Attack", false);
@@ -138,8 +134,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "Terrain") 
 		{
-			if(!LandSrc.isPlaying)
-				LandSrc.Play();
+
+			LandSrc.Play();
 			grounded = true;
 			jump = false;
 		}
@@ -149,15 +145,14 @@ public class PlayerController : MonoBehaviour {
 	public void Bounce(float _vel)
 	{
 		rigidbody2D.velocity = new Vector2(0, jumpForce + _vel);
-		if(!BounceSrc.isPlaying)
-			BounceSrc.Play();
+
+		BounceSrc.Play();
 	}
 
 	public void HitWall()
 	{
 		playerAnimation.SetBool ("Stagger", true);
 		staggerTimmer = 0.1f;
-		if(!HitWallSrc.isPlaying)
-			HitWallSrc.Play();
+		HitWallSrc.Play();
 	}
 }
