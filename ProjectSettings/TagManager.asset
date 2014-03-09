@@ -53,3 +53,15 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: TerrainLayer
+    userID: 1
+    uniqueID: 2185114719
+    locked: 0
+  - name: WaveLayer
+    userID: 2
+    uniqueID: 3765094217
+    locked: 0
+  - name: PlayerLayer
+    userID: 3
+    uniqueID: 901373619
+    locked: 0

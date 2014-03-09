@@ -24,15 +24,18 @@ public class Score : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		timer -= Time.deltaTime;
-		if (GlobalVariable.score - 30 > 0 && timer <= 0) 
+		if(!GlobalVariable.endOfGame)
 		{
-			GlobalVariable.score -= 30 + RollDice(9);
-			timer = 6.0f;
-		} 
-		else if (GlobalVariable.score - 30 < 0) 
-		{
-			GlobalVariable.score = 0;
+			timer -= Time.deltaTime;
+			if (GlobalVariable.score - 30 > 0 && timer <= 0) 
+			{
+				GlobalVariable.score -= 30 + RollDice(9);
+				timer = 6.0f;
+			} 
+			else if (GlobalVariable.score - 30 < 0) 
+			{
+				GlobalVariable.score = 0;
+			}
 		}
 	}
 

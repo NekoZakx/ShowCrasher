@@ -18,7 +18,6 @@ public class EndGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		Debug.Log(audio.clip.length);
 		if(audio.clip.length < Time.time)
 		{
 			master.ProduceWave  = false;
