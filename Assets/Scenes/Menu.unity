@@ -158,10 +158,10 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 333428564}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.5, y: 4.40999985}
+  m_Size: {x: 2.5, y: 3.3499999}
   m_Center: {x: 1.11533797, y: -1.31141806}
 --- !u!212 &333428567
 SpriteRenderer:
@@ -1058,7 +1058,7 @@ AudioSource:
   m_GameObject: {fileID: 1524182012}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 1badc7b7684de5643bb09a195a99701a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e7cecf33a2137e645806bc1f8d65ae69, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb6693913c314b49876c872ac57edc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myFont: {fileID: 0}
 --- !u!114 &1785697417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textureCadre: {fileID: 2800000, guid: 613d030dc57462045811122e12d21247, type: 3}
+  textureRec: {fileID: 2800000, guid: 962d42c73cdb9234dbead3e4b6ea4232, type: 3}
 --- !u!1 &2101793014
 GameObject:
   m_ObjectHideFlags: 0
