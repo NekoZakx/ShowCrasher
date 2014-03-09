@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{3F779A1F-CBCC-31A8-FAEA-F5CC0EEBD2CE}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;UNITY_64;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Script\AngleCamera.cs" />
+     <Compile Include="Assets\Script\Chat.cs" />
+     <Compile Include="Assets\Script\Collectable\Collectable.cs" />
+     <Compile Include="Assets\Script\Collectable\Cymbal.cs" />
+     <Compile Include="Assets\Script\Collectable\ObjectParam.cs" />
+     <Compile Include="Assets\Script\Collectable\Triangle.cs" />
+     <Compile Include="Assets\Script\Collectable\Trumpet.cs" />
+     <Compile Include="Assets\Script\Crowd\Crow.cs" />
+     <Compile Include="Assets\Script\Crowd\CrowAction.cs" />
+     <Compile Include="Assets\Script\Crowd\CrowdGetOut.cs" />
+     <Compile Include="Assets\Script\Crowd\CrowdSpawn.cs" />
+     <Compile Include="Assets\Script\Crowd\crowdAction.cs" />
+     <Compile Include="Assets\Script\Crowd\spri.cs" />
+     <Compile Include="Assets\Script\EndGame.cs" />
+     <Compile Include="Assets\Script\GlobalVariable.cs" />
+     <Compile Include="Assets\Script\MusicLoader.cs" />
+     <Compile Include="Assets\Script\Player\PlayerController.cs" />
+     <Compile Include="Assets\Script\Player\PlayerInventory.cs" />
+     <Compile Include="Assets\Script\Score.cs" />
+     <Compile Include="Assets\Script\ScrollView.cs" />
+     <Compile Include="Assets\Script\SoundBlast.cs" />
+     <Compile Include="Assets\Script\Specials\SpectatorInteractions.cs" />
+     <Compile Include="Assets\Script\Specials\SpotLightFire.cs" />
+     <Compile Include="Assets\Script\SpotLight.cs" />
+     <Compile Include="Assets\Script\Stats.cs" />
+     <Compile Include="Assets\Script\Wave\WaveCoteCollider.cs" />
+     <Compile Include="Assets\Script\Wave\WaveHautCollider.cs" />
+     <Compile Include="Assets\Script\Wave\WaveScript.cs" />
+     <Compile Include="Assets\Script\WaveSpawn.cs" />
+     <Compile Include="Assets\Script\WorldMap.cs" />
+     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
+     <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\CompositeXffect.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\ExampleCamera.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\ExampleManager.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\Example_Mobile.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\Fx\XftVolumeFogObject.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\SimpleMissile.cs" />
+     <Compile Include="Assets\Xffect\Examples\Scripts\SimpleRotate.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\Affector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\AirFieldAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\BombAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\DragAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\GravityAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\TurbulenceFieldAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Affectors\VortexAffector.cs" />
+     <Compile Include="Assets\Xffect\Script\Component\EffectLayer.cs" />
+     <Compile Include="Assets\Xffect\Script\Component\XffectCache.cs" />
+     <Compile Include="Assets\Xffect\Script\Component\XffectComponent.cs" />
+     <Compile Include="Assets\Xffect\Script\Cone.cs" />
+     <Compile Include="Assets\Xffect\Script\CustomMesh.cs" />
+     <Compile Include="Assets\Xffect\Script\EffectNode.cs" />
+     <Compile Include="Assets\Xffect\Script\Emitter.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\CameraShakeEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\ColorInverseEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\GlowEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\LightEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\RadialBlurEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\RadialBlurTexAddEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\SoundEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\TimeScaleEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\XftCameraShakeComp.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\XftEvent.cs" />
+     <Compile Include="Assets\Xffect\Script\Events\XftEventComponent.cs" />
+     <Compile Include="Assets\Xffect\Script\ImageEffects\XftColorInverse.cs" />
+     <Compile Include="Assets\Xffect\Script\ImageEffects\XftGlow.cs" />
+     <Compile Include="Assets\Xffect\Script\ImageEffects\XftRadialBlur.cs" />
+     <Compile Include="Assets\Xffect\Script\ImageEffects\XftRadialBlurTexAdd.cs" />
+     <Compile Include="Assets\Xffect\Script\RenderObject.cs" />
+     <Compile Include="Assets\Xffect\Script\RibbonTrail.cs" />
+     <Compile Include="Assets\Xffect\Script\Sprite.cs" />
+     <Compile Include="Assets\Xffect\Script\UVAnimation.cs" />
+     <Compile Include="Assets\Xffect\Script\VertexPool.cs" />
+     <Compile Include="Assets\Xffect\Tutorial\API Usage\AttractAffector\XftArractDemo.cs" />
+     <Compile Include="Assets\Xffect\Tutorial\API Usage\MagicChain\XftMagicChainDemo.cs" />
+     <Compile Include="Assets\Xffect\Tutorial\API Usage\SimpleStart\XftSimpleStart.cs" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_distort_additive.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_color_inverse.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xf_heat_distortion.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightCone.shader" />
+     <None Include="Assets\ShaderForge\Readme.txt" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_glow_downsample.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\MaterialPlatform.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_radial_blur_new.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_radial_blur.shader" />
+     <None Include="Assets\Xffect\readme.txt" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Cubemaps.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Parallax.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_glow_conetap.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\LightWrapping.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexColorRounding.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\TessellationDisplacement.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_volume_fog.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_mask.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\Tiles.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\PixelRotator.shader" />
+     <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_glow_compose.shader" />
+     <None Include="Assets\Xffect\Examples\Shaders\xft_radial_blur_mask.shader" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{DADD38BE-FEE1-D8D2-430B-9D5FBCD958D6}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
