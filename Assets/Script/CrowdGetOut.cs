@@ -12,7 +12,7 @@ public class CrowdGetOut : MonoBehaviour {
 	private int size;
 	private float posX = 0;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
-	private int cpt = 1;
+	private int cpt = 0;
 	protected Animator playerAnimation;
 
 	// Use this for initialization
@@ -22,7 +22,7 @@ public class CrowdGetOut : MonoBehaviour {
 		//playerAnimation = GetComponent<Animator>();
 		size = myCrowd.Length-1;
 		Debug.Log ("SIZE: " + myCrowd.Length);
-		posX = -2.0f;
+		posX = -5.0f;
 	}
 	
 	// Update is called once per frame
