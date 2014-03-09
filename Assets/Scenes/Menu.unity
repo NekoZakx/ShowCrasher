@@ -610,9 +610,9 @@ MonoBehaviour:
   nbCymbal: 0
   nbTrumpet: 0
   myFont: {fileID: 0}
-  textureTriangle: {fileID: 2800000, guid: 1a609367688f04343b33dd00e5649782, type: 3}
-  textureCymbal: {fileID: 2800000, guid: a6d9c623877cb274a8332d15d3d0c5f0, type: 3}
-  textureTrumpet: {fileID: 2800000, guid: 18439b9cc30d0f549be79d7a37b24007, type: 3}
+  textureTriangle: {fileID: 2800000, guid: 4140f5ede099c294882fb4a1c4531e36, type: 3}
+  textureCymbal: {fileID: 2800000, guid: b61f0cfde79e2034ba2e42659ed51517, type: 3}
+  textureTrumpet: {fileID: 2800000, guid: d5c29b5fe01c52e47bf6b1d5cafe3128, type: 3}
 --- !u!82 &1477344097
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1122,6 +1122,7 @@ GameObject:
   - 114: {fileID: 1785697416}
   - 114: {fileID: 1785697417}
   - 114: {fileID: 1785697418}
+  - 114: {fileID: 1785697419}
   m_Layer: 0
   m_Name: MasterObject
   m_TagString: Respawn
@@ -1143,9 +1144,9 @@ MonoBehaviour:
   wave1: {fileID: 100004, guid: 15d48a5a1cd4f8f4cb40c4afa275b018, type: 2}
   wave2: {fileID: 100004, guid: 97a23e140221d5e4e9db1d3fc0e00c5c, type: 2}
   wave3: {fileID: 100004, guid: 2588e8b603ccae94bbe4eacdd67a5b9b, type: 2}
-  triangle: {fileID: 100000, guid: 1f6df85c570846b4eb05ebf6570537a7, type: 2}
-  cymbal: {fileID: 100000, guid: 3bfc40890ca91e14c964b184f19d97be, type: 2}
-  trumpet: {fileID: 100000, guid: 7b3170711acf6b245b3f6066d6b41567, type: 2}
+  triangle: {fileID: 100000, guid: 52169679c6b45ba4f864a8d08e5606bb, type: 2}
+  cymbal: {fileID: 100000, guid: f8349c5631ecc2c4eafdaef4e43ab479, type: 2}
+  trumpet: {fileID: 100000, guid: 3e00c617aba8df846bfb35d14add542a, type: 2}
 --- !u!4 &1785697415
 Transform:
   m_ObjectHideFlags: 0
@@ -1192,6 +1193,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553ca8db34a6a8a45a2677a6862ec758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1785697419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1785697413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2cd947ebba86646bb33a969a08c2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textureCadre: {fileID: 2800000, guid: 613d030dc57462045811122e12d21247, type: 3}
