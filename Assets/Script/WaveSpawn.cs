@@ -78,15 +78,7 @@ public class WaveSpawn : MonoBehaviour {
 		itmHeight [2] = 16.0f;
 		waveHeight = -0.9f;
 		initWavePosition = transform.position; 
-		initItemPosition.x = transform.position.x+2; 
-		Debug.Log ("nbCollectablesToTake : " + nbCollectablesToTake);
-		Debug.Log ("nbTrianglesToTake : " + nbTrianglesToTake);
-		Debug.Log ("nbCymbalToTake : " + nbCymbalToTake);
-		Debug.Log ("nbTrumpetToTake : " + nbTrumpetToTake);
-		Debug.Log ("HP3 : " + hp3);
-		Debug.Log ("HP2 : " + hp2);
-		Debug.Log ("HP1 : " + hp1);
-
+		initItemPosition.x = transform.position.x+2;
 		//waveList = new ArrayList();
 		//itmList = new ArrayList();
 	}

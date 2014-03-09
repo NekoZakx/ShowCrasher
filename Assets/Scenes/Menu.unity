@@ -371,6 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 30
+  attackPower: 0
   timer: 1
   staggerTimmer: 0
   JumpSrc: {fileID: 1477344097}
@@ -403,6 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4e9bbe908cdc3408ae726774957514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nbTriangle: 0
+  nbCymbal: 0
+  nbTrumpet: 0
 --- !u!82 &1477344097
 AudioSource:
   m_ObjectHideFlags: 0

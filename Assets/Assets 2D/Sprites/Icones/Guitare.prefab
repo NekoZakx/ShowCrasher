@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3512c255f29b0794787ecf22225b201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfObject: 
+  nameOfObject: Triangle
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

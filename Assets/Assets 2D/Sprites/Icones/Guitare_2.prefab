@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c36abff1e68df4e95659f0220c79e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameOfObject: 
+  nameOfObject: Cymbal
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

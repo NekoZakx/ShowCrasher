@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour {
 
 	private bool jump = false;
 	private bool isAttacking = false;
-	public float jumpForce = 100000000.0f;
+	public float jumpForce;
+	public float attackPower;
 	private bool isInTheAir = false;
 	
 	private bool isFalling = false;
