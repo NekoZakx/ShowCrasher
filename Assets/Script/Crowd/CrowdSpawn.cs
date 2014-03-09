@@ -60,12 +60,14 @@ public class CrowdSpawn : MonoBehaviour {
 				{
 				case 1:
 					initCrowdPosition.y += RollDice(16) + 2;
+					initCrowdPosition.z += initCrowdPosition.y * 0.01f;
 					crowdSpawn = (GameObject)Instantiate(crowdChose, initCrowdPosition , Quaternion.identity);
 					crowdSpawn.GetComponent<crowdAction>().setVitesse(-3);
 					crowdSpawn.GetComponent<crowdAction>().setNbWaveDepart(RollDice(40));
 					break;
 				case 2:
 					initCrowdPosition.y += RollDice(16) + 2;
+					initCrowdPosition.z += initCrowdPosition.y * 0.01f;
 					crowdSpawn = (GameObject)Instantiate(crowdChose, initCrowdPosition , Quaternion.identity);
 					crowdSpawn.GetComponent<crowdAction>().setVitesse(-3);
 					crowdSpawn.GetComponent<crowdAction>().setNbWaveDepart(RollDice(30));
@@ -73,12 +75,14 @@ public class CrowdSpawn : MonoBehaviour {
 
 				case 3:
 					initCrowdPosition.y += RollDice(16) + 2;
+					initCrowdPosition.z += initCrowdPosition.y * 0.01f;
 					crowdSpawn = (GameObject)Instantiate(crowdChose, initCrowdPosition , Quaternion.identity);
 					crowdSpawn.GetComponent<crowdAction>().setVitesse(-3);
 					crowdSpawn.GetComponent<crowdAction>().setNbWaveDepart(RollDice(25));
 					break;
 				case 4:
 					initCrowdPosition.y += RollDice(16) + 2;
+					initCrowdPosition.z += initCrowdPosition.y * 0.01f;
 					crowdSpawn = (GameObject)Instantiate(crowdChose, initCrowdPosition , Quaternion.identity);
 					crowdSpawn.GetComponent<crowdAction>().setVitesse(-3);
 					crowdSpawn.GetComponent<crowdAction>().setNbWaveDepart(RollDice(20));
@@ -88,8 +92,6 @@ public class CrowdSpawn : MonoBehaviour {
 					break;
 				
 				}
-
-
 				initCrowdPosition = transform.position; 
 				timer = 0.0f;
 			}
