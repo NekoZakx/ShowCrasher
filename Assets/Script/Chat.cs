@@ -141,13 +141,13 @@ public class Chat : MonoBehaviour {
 			allChatMessage.Add(name[RollDice(System.Convert.ToByte(name.Count))-1].ToString() + negativeMessage[RollDice(System.Convert.ToByte(negativeMessage.Count))-1].ToString());
 		}
 		
-		scrollPos = chat.BeginScrollView (new Rect (Screen.width - 10 - 300, 10, 300, 300), scrollPos, GetMessagesHeight(allChatMessage, 500), Vector4.zero);
+		scrollPos = chat.BeginScrollView (new Rect (Screen.width - 30 - 150, 30, 150, 150), scrollPos, GetMessagesHeight(allChatMessage, 150), Vector4.zero);
 		foreach(string c in allChatMessage)
 		{
-			GUILayout.Label(c,GUILayout.MaxWidth(300));
+			GUILayout.Label(c,GUILayout.MaxWidth(150));
 		}
 		chat.EndScrollView();
-		GUI.Box (new Rect (Screen.width - 10 - 300, 10, 300, 300), "");
+		GUI.Box (new Rect (Screen.width - 30 - 150, 30, 150, 150), "");
 		scrollPos.y++;
 	}
 }

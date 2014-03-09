@@ -8,8 +8,8 @@ public class PlayerInventory : MonoBehaviour {
 	public int nbCymbal;
 	public int nbTrumpet;
 	public Font myFont;
-	public float offsetX = 10.0f;
-	public float offsetY = 5.0f;
+	private float offsetX = 50.0f;
+	private float offsetY = 5.0f;
 	public Texture textureTriangle;
 	public Texture textureCymbal;
 	public Texture textureTrumpet;
@@ -62,13 +62,13 @@ public class PlayerInventory : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.skin.font = myFont;
-		GUI.BeginGroup(new Rect(offsetX, Screen.height-offsetY-30.0f, 505, 30));
-		GUI.DrawTexture(new Rect(0, 0, 30, 30), textureCymbal);
-		GUI.Label(new Rect(35, 0, 45, 30), "" + nbCymbal);
-		GUI.DrawTexture (new Rect (85, 0, 30, 30), textureTriangle);
-		GUI.Label(new Rect(120, 0, 45, 30), "" + nbTriangle);
-		GUI.DrawTexture (new Rect (170, 0, 30, 30), textureTrumpet);
-		GUI.Label(new Rect(205, 0, 45, 30), "" + nbTrumpet);
+		GUI.BeginGroup(new Rect(offsetX, Screen.height-offsetY-40.0f, 505, 30));
+		GUI.DrawTexture(new Rect(offsetX, 0, 30, 30), textureCymbal);
+		GUI.Label(new Rect(offsetX+35, 0, 45, 30), "" + nbCymbal);
+		GUI.DrawTexture (new Rect (offsetX+85, 0, 30, 30), textureTriangle);
+		GUI.Label(new Rect(offsetX+120, 0, 45, 30), "" + nbTriangle);
+		GUI.DrawTexture (new Rect (offsetX+170, 0, 30, 30), textureTrumpet);
+		GUI.Label(new Rect(offsetX+205, 0, 45, 30), "" + nbTrumpet);
 		GUI.EndGroup();
 	}
 }
