@@ -92,7 +92,7 @@ public class WaveScript : MonoBehaviour {
 
 	public void dommageWave(float dommageRecu)
 	{	
-		Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
+		//Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
 		hp -= 100;
 		if(hp <= 0)
 		{
