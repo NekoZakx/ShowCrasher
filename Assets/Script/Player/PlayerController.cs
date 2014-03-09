@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour {
 	public void Bounce(float _vel)
 	{
 		rigidbody2D.velocity = new Vector2(0, jumpForce + _vel);
-
+		GlobalVariable.nbJump++;
 		BounceSrc.Play();
 	}
 
