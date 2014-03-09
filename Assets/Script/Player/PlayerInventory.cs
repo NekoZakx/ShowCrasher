@@ -61,6 +61,7 @@ public class PlayerInventory : MonoBehaviour {
 			nbTrumpet++;
 			btrumpet = true;
 		}
+		checkcollectables();
 	}
 
 	void OnGUI()
@@ -75,6 +76,7 @@ public class PlayerInventory : MonoBehaviour {
 		GUI.Label(new Rect(offsetX+205, 0, 45, 30), "" + nbTrumpet);
 		GUI.EndGroup();
 	}
+
 	void checkcollectables()
 	{
 		if (btriangle && btrumpet && bcymbal)

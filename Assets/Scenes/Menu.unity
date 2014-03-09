@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: ac9b29fc7096fba438013093e2ecb24a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b4438d80db164c40ac2206dbd7767ce, type: 3}
   m_Color: {r: .996078432, g: .996078432, b: .996078432, a: 0}
 --- !u!1 &573822711
 GameObject:
@@ -516,7 +516,6 @@ GameObject:
   - 82: {fileID: 1477344100}
   - 82: {fileID: 1477344099}
   - 82: {fileID: 1477344098}
-  - 114: {fileID: 1477344102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -637,6 +636,13 @@ MonoBehaviour:
   textureTriangle: {fileID: 2800000, guid: 4140f5ede099c294882fb4a1c4531e36, type: 3}
   textureCymbal: {fileID: 2800000, guid: b61f0cfde79e2034ba2e42659ed51517, type: 3}
   textureTrumpet: {fileID: 2800000, guid: d5c29b5fe01c52e47bf6b1d5cafe3128, type: 3}
+  CU: {fileID: 9100000, guid: 1133f2e6741793f4997aa9513e29a2e1, type: 2}
+  CUC: {fileID: 9100000, guid: 0621a8d0d31d5bb438432ee6cf7d565b, type: 2}
+  CUT: {fileID: 9100000, guid: f8dfe5b59e861d8418d64ed719142ab3, type: 2}
+  C: {fileID: 9100000, guid: 4d8e9c5517dfd7b48b6622f646668c89, type: 2}
+  CCUT: {fileID: 9100000, guid: e2052ccc535264640a2889e5418dee25, type: 2}
+  CT: {fileID: 9100000, guid: 035c54096055219419a893548c92a920, type: 2}
+  T: {fileID: 9100000, guid: b18c3218e662f90439c727c4445d91c0, type: 2}
 --- !u!82 &1477344097
 AudioSource:
   m_ObjectHideFlags: 0
@@ -927,17 +933,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1477344102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1477344089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 946db8cfbdf13084aae8f5dbcfe4e24a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1504910521
 GameObject:
   m_ObjectHideFlags: 0
