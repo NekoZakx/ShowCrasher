@@ -31,25 +31,13 @@ public class PlayerInventory : MonoBehaviour {
 
 	public void AddToInventory(ObjectParam newObject)
 	{
-		int ctrt = 0;
-		int ctrc = 0;
-		int ctrp = 0;
-
 		objects.Add (newObject);
-
-		for(int i=0; i<objects.Count; i++)
-		{
-			if (newObject.name.Equals("Triangle"))
-				ctrt++;
-			if (newObject.name.Equals("Cymbal"))
-				ctrc++;
-			if (newObject.name.Equals("Trumpet"))
-				ctrp++;
-		}
-
-		nbTriangle = ctrt;
-		nbCymbal = ctrc;
-		nbTrumpet = ctrp;
+		if (newObject.name.Equals("Triangle"))
+			nbTriangle++;
+		if (newObject.name.Equals("Cymbal"))
+			nbCymbal++;
+		if (newObject.name.Equals("Trumpet"))
+			nbTrumpet++;
 	}
 
 	void OnGUI()

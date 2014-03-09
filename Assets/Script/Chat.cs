@@ -68,8 +68,6 @@ public class Chat : MonoBehaviour {
 		chat = new CustomScrollView ();
 
 		scrollPos = Vector2.zero;
-
-		allChatMessage.Add ("Orangina34: Hello everyone :)");
 	}
 	
 	// Update is called once per frame
@@ -138,13 +136,13 @@ public class Chat : MonoBehaviour {
 			allChatMessage.Add(name[RollDice(System.Convert.ToByte(name.Count))-1].ToString() + negativeMessage[RollDice(System.Convert.ToByte(negativeMessage.Count))-1].ToString());
 		}
 		
-		scrollPos = chat.BeginScrollView (new Rect (Screen.width - 30 - 150, 30, 150, 150), scrollPos, GetMessagesHeight(allChatMessage, 150), Vector4.zero);
+		scrollPos = chat.BeginScrollView (new Rect (Screen.width - 30 - 300, 30, 300, 150), scrollPos, GetMessagesHeight(allChatMessage, 300), Vector4.zero);
 		foreach(string c in allChatMessage)
 		{
-			GUILayout.Label(c,GUILayout.MaxWidth(150));
+			GUILayout.Label(c,GUILayout.MaxWidth(300));
 		}
 		chat.EndScrollView();
-		GUI.Box (new Rect (Screen.width - 30 - 150, 30, 150, 150), "");
+		GUI.Box (new Rect (Screen.width - 30 - 300, 30, 300, 150), "");
 		scrollPos.y++;
 	}
 }
