@@ -429,7 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 6
-  myFont: {fileID: 12800000, guid: 96654e4574c20314c8bc5210dca6ec69, type: 3}
+  myFont: {fileID: 12800000, guid: fee20d476b2d02d498ac5fd6a26b5c88, type: 3}
 --- !u!212 &808596940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06f407e75d293841a15ad113bc52450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFont: {fileID: 12800000, guid: 96654e4574c20314c8bc5210dca6ec69, type: 3}
+  myFont: {fileID: 12800000, guid: fee20d476b2d02d498ac5fd6a26b5c88, type: 3}
 --- !u!1 &1017437189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,7 @@ AudioSource:
   m_GameObject: {fileID: 1524182012}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 881ee1e3ff7850045a15bcbf02eb736e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1badc7b7684de5643bb09a195a99701a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

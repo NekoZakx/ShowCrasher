@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a365774801cb2bd45bc9cc5f51c649dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myFont: {fileID: 12800000, guid: 96654e4574c20314c8bc5210dca6ec69, type: 3}
+  myFont: {fileID: 12800000, guid: fee20d476b2d02d498ac5fd6a26b5c88, type: 3}
 --- !u!1 &2073150475
 GameObject:
   m_ObjectHideFlags: 0
