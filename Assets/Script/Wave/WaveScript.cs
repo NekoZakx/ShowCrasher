@@ -93,7 +93,7 @@ public class WaveScript : MonoBehaviour {
 	public void dommageWave(float dommageRecu)
 	{	
 		//Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
-		hp -= 100;
+		hp -= dommageRecu;
 		if(hp <= 0)
 		{
 			GetComponent<Animator>().SetBool("Kill_wave", true);
