@@ -101,9 +101,9 @@ public class Score : MonoBehaviour
 		{
 			GUI.skin.font = myFont;
 			GUI.skin.label.alignment = TextAnchor.UpperLeft; 
-			GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + GlobalVariable.score);
+			GUI.Label(new Rect(40,20,Screen.width,Screen.height), "Viewers: " + GlobalVariable.score);
 			GUI.skin.label.alignment = TextAnchor.UpperLeft; 
-			GUI.Label(new Rect(0,30,Screen.width,Screen.height), "Combo Wave Hit: " + nbWaveDestroy);
+			GUI.Label(new Rect(40,40,Screen.width,Screen.height), "Combo Wave Hit: " + nbWaveDestroy);
 		}
 	}
 }
