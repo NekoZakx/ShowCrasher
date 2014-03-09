@@ -57,6 +57,7 @@ public class Collectable : MonoBehaviour {
 	{
 		int power = 0;
 		power = (Player.GetComponent<PlayerInventory> ().nbTriangle * 1) + (Player.GetComponent<PlayerInventory> ().nbCymbal * 3) + (Player.GetComponent<PlayerInventory> ().nbTrumpet * 5) + 5;
+
 		Player.GetComponent<PlayerController> ().attackPower = power;
 	}
 

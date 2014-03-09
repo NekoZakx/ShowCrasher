@@ -61,6 +61,7 @@ public class WaveScript : MonoBehaviour {
 	public void setWeaponCollision()
 	{
 		//Debug.Log("Collision Player Weapon");
+		GlobalVariable.crowdGetOut = true;
 		playerWeaponCollision = true;
 		script.inscreaseScore(100);
 	}
@@ -91,7 +92,7 @@ public class WaveScript : MonoBehaviour {
 
 	public void dommageWave(float dommageRecu)
 	{	
-		Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
+		//Debug.Log("HP : " + hp + " Dommage : " + dommageRecu );
 		hp -= dommageRecu;
 		if(hp <= 0)
 		{

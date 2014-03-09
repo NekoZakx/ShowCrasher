@@ -18,6 +18,11 @@ public class PlayerInventory : MonoBehaviour {
 
 	}
 
+	public int getTotalInventaire()
+	{
+		return (nbTriangle+nbCymbal+nbTrumpet);
+	}
+
 	public void AddToInventory(ObjectParam newObject)
 	{
 		int ctrt = 0;

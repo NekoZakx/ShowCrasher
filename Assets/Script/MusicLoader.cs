@@ -12,7 +12,7 @@ public class MusicLoader : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameMusic = GetComponent<AudioSource>();
-		Debug.LogWarning("SIZE OF MAIN MUSIC: " + GameMusic.clip.length);
+		//Debug.LogWarning("SIZE OF MAIN MUSIC: " + GameMusic.clip.length);
 		//GameMusic.clip = Resources.Load<AudioClip>("Queen - We Are The Champion");
 
 		crowd = GameObject.FindGameObjectWithTag("CrowdSound").GetComponent<AudioSource>();

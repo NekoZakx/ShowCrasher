@@ -4,12 +4,8 @@ using System.Collections;
 
 public class Stats : MonoBehaviour {
 
-	public bool endOfGame = false;
 	public Font myFont;
-
-	private int totalViewers;
-	private int maximumCombo;
-	private int nbInstruments;
+	private int totalInventaire;
 
 	/*
 	 * 
@@ -37,14 +33,15 @@ public class Stats : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if(endOfGame)
-		{
+		if(GlobalVariable.endOfGame)
+		{ 
+			totalInventaire = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().getTotalInventaire();
 			GUI.skin.font = myFont;
 			GUI.Box(new Rect (0, 0, Screen.width, Screen.height), "");
 			GUI.skin.label.alignment = TextAnchor.UpperCenter; 
 			GUI.Label(new Rect(0,0, Screen.width, Screen.height), "Your Statistiques:");
-			GUI.skin.label.alignment = TextAnchor.UpperLeft;
-			GUI.Label(new Rect(0,0, Screen.width, Screen.height), "\nTotalViewers: " + totalViewers + "\nMaximum Combo: " + maximumCombo + "\nNumbers of instrument: " + nbInstruments);
+			GUI.skin.label.alignment = TextAnchor.UpperCenter;
+			GUI.Label(new Rect(0,0, Screen.width, Screen.height), "\nTotalViewers: " + GlobalVariable.score + "\nMaximum Combo: " + GlobalVariable.nbWaveComboMax + "\nNumbers of instrument: " + totalInventaire + "\nNumbers of jumps: " + GlobalVariable.nbJump);
 		}
 	}
 }

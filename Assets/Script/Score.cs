@@ -7,7 +7,7 @@ using System.Collections;
 
 public class Score : MonoBehaviour 
 {
-	private int score;
+
 	public float timer = 6.0f;
 	public Font myFont;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
@@ -16,7 +16,7 @@ public class Score : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-		score = 0;
+
 		nbWaveDestroy = 0;
 		playerStats = new Stats ();
 	}
@@ -25,14 +25,14 @@ public class Score : MonoBehaviour
 	void Update () 
 	{
 		timer -= Time.deltaTime;
-		if (score - 30 > 0 && timer <= 0) 
+		if (GlobalVariable.score - 30 > 0 && timer <= 0) 
 		{
-			score -= 30 + RollDice(9);
+			GlobalVariable.score -= 30 + RollDice(9);
 			timer = 6.0f;
 		} 
-		else if (score - 30 < 0) 
+		else if (GlobalVariable.score - 30 < 0) 
 		{
-			score = 0;
+			GlobalVariable.score = 0;
 		}
 	}
 
@@ -44,15 +44,15 @@ public class Score : MonoBehaviour
 		{
 			GlobalVariable.nbWaveComboMax = nbWaveDestroy;
 		}
-		score += nbWaveDestroy*newScore;
+		GlobalVariable.score += nbWaveDestroy*newScore;
 	}
 
 	public void decreaseScore(int newScore)
 	{
 		nbWaveDestroy = 0;
-		if (score - newScore > 0) 
+		if (GlobalVariable.score - newScore > 0) 
 		{
-			score -= newScore;
+			GlobalVariable.score -= newScore;
 		}
 	}
 
@@ -94,10 +94,12 @@ public class Score : MonoBehaviour
 
 	void OnGUI()
 	{
-		if(!playerStats.endOfGame)
+		if(!GlobalVariable.endOfGame)
 		{
 			GUI.skin.font = myFont;
-			GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + score);
+			GUI.skin.label.alignment = TextAnchor.UpperLeft; 
+			GUI.Label(new Rect(0,0,Screen.width,Screen.height), "Viewers: " + GlobalVariable.score);
+			GUI.skin.label.alignment = TextAnchor.UpperLeft; 
 			GUI.Label(new Rect(0,30,Screen.width,Screen.height), "Combo Wave Hit: " + nbWaveDestroy);
 		}
 	}
