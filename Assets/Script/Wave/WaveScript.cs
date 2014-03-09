@@ -112,8 +112,10 @@ public class WaveScript : MonoBehaviour {
 		hp -= dommageRecu;
 		if(hp <= 0)
 		{
+			GameObject.FindGameObjectWithTag("Music").GetComponent<SoundBlast>().isBlasting = true;
 			GetComponent<Animator>().SetBool("Kill_wave", true);
 		}else{
+			GameObject.FindGameObjectWithTag("Music").GetComponent<SoundBlast>().isLittleBlasting = true;
 			if(size != 0)
 			{
 				size--;
