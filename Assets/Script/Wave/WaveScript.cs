@@ -61,7 +61,7 @@ public class WaveScript : MonoBehaviour {
 
 	public void setWeaponCollision()
 	{
-		Debug.Log("Collision Player Weapon");
+		//Debug.Log("Collision Player Weapon");
 		playerWeaponCollision = true;
 		script.inscreaseScore(100);
 	}

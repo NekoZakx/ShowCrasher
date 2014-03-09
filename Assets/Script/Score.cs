@@ -12,10 +12,12 @@ public class Score : MonoBehaviour
 	public Font myFont;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 	private Stats playerStats;
+	private int nbWaveDestroy;
 
 	// Use this for initialization
 	void Start () {
 		score = 0;
+		nbWaveDestroy = 0;
 		playerStats = new Stats ();
 	}
 	
@@ -36,11 +38,13 @@ public class Score : MonoBehaviour
 
 	public void inscreaseScore(int newScore)
 	{
-		score += newScore;
+		nbWaveDestroy++;
+		score += nbWaveDestroy*newScore;
 	}
 
 	public void decreaseScore(int newScore)
 	{
+		nbWaveDestroy = 0;
 		if (score - newScore > 0) 
 		{
 			score -= newScore;
