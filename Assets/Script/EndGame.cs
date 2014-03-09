@@ -10,7 +10,7 @@ public class EndGame : MonoBehaviour {
 
 	void Start () 
 	{
-		audio = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
+		audio = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
 		master = gameObject.GetComponent<WaveSpawn>();
 		playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 	}
