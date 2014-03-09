@@ -4,6 +4,7 @@ using System.Collections;
 public class AngleCamera : MonoBehaviour {
 
 	public Texture2D textureCadre;
+	public Texture2D textureRec;
 	private Vector2 scale = new Vector2(1,1);
 
 	// Use this for initialization
@@ -25,5 +26,6 @@ public class AngleCamera : MonoBehaviour {
 		GUI.DrawTexture (new Rect (Screen.width-10, 100, 100*scale.x, 100*scale.y), textureCadre);
 		scale.y = 1;
 		GUI.DrawTexture (new Rect (Screen.width-10, Screen.height-100, 100*scale.x, 100*scale.y), textureCadre);
+		GUI.DrawTexture (new Rect (25, 2, 100, 100), textureRec);
 	}
 }

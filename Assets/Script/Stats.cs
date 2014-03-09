@@ -7,20 +7,6 @@ public class Stats : MonoBehaviour {
 	public Font myFont;
 	private int totalInventaire;
 
-	/*
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * METTRE LES VALEURS AUX VARIABLES!
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
-
 	// Use this for initialization
 	void Start () {
 	
