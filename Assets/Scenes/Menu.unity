@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 175670588}
   m_LocalRotation: {x: 0, y: 0, z: .087155737, w: .99619472}
-  m_LocalPosition: {x: -15.1795712, y: 6.77628517, z: 0}
+  m_LocalPosition: {x: -8.08098125, y: 4.30000782, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 0}
   m_Children: []
   m_Father: {fileID: 573822712}
@@ -227,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 804584640}
   m_LocalRotation: {x: 0, y: 0, z: -.087155737, w: .99619472}
-  m_LocalPosition: {x: -25.8716488, y: 2.18634892, z: 0}
+  m_LocalPosition: {x: -21.2493992, y: 4.00224972, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 573822712}
@@ -366,7 +366,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1017437189}
   m_LocalRotation: {x: 0, y: 0, z: -.5, w: .866025388}
-  m_LocalPosition: {x: 4.49424934, y: .850233555, z: 0}
+  m_LocalPosition: {x: .990991592, y: 9.01992512, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 573822712}
@@ -469,7 +469,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1309026238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.76451015, y: 5.05354071, z: -1.53268814}
+  m_LocalPosition: {x: -11.4153404, y: 3.56779242, z: -1.53268814}
   m_LocalScale: {x: 4, y: .237039253, z: .267442763}
   m_Children: []
   m_Father: {fileID: 0}
@@ -492,6 +492,7 @@ GameObject:
   - 82: {fileID: 1477344100}
   - 82: {fileID: 1477344099}
   - 82: {fileID: 1477344098}
+  - 114: {fileID: 1477344102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -608,6 +609,13 @@ MonoBehaviour:
   nbTriangle: 0
   nbCymbal: 0
   nbTrumpet: 0
+  newItemToAdd: 0
+  myFont: {fileID: 0}
+  offsetX: 10
+  offsetY: 5
+  textureTriangle: {fileID: 2800000, guid: 1a609367688f04343b33dd00e5649782, type: 3}
+  textureCymbal: {fileID: 2800000, guid: a6d9c623877cb274a8332d15d3d0c5f0, type: 3}
+  textureTrumpet: {fileID: 2800000, guid: 18439b9cc30d0f549be79d7a37b24007, type: 3}
 --- !u!82 &1477344097
 AudioSource:
   m_ObjectHideFlags: 0
@@ -898,6 +906,25 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &1477344102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477344089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946db8cfbdf13084aae8f5dbcfe4e24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPlayerInventory: {fileID: 0}
+  myCollectibles: []
+  myFont: {fileID: 0}
+  offsetX: 10
+  offsetY: 5
+  textureTriangle: {fileID: 2800000, guid: 1a609367688f04343b33dd00e5649782, type: 3}
+  textureCymbal: {fileID: 2800000, guid: a6d9c623877cb274a8332d15d3d0c5f0, type: 3}
+  textureTrumpet: {fileID: 2800000, guid: 18439b9cc30d0f549be79d7a37b24007, type: 3}
 --- !u!1 &1504910521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,8 +1215,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2101793014}
-  m_LocalRotation: {x: 0, y: 0, z: -.0436193869, w: .999048233}
-  m_LocalPosition: {x: 20.6488113, y: .971734047, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -.25166136, w: .967815399}
+  m_LocalPosition: {x: 6.79590511, y: 2.35442257, z: 0}
   m_LocalScale: {x: 12, y: 12, z: 1}
   m_Children: []
   m_Father: {fileID: 573822712}
