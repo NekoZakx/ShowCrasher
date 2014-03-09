@@ -61,6 +61,7 @@ public class WaveScript : MonoBehaviour {
 	public void setWeaponCollision()
 	{
 		//Debug.Log("Collision Player Weapon");
+		GlobalVariable.showPositiveMessage = true;
 		GlobalVariable.crowdGetOut = true;
 		GlobalVariable.nbWaveDestroy++;
 		playerWeaponCollision = true;
