@@ -609,7 +609,6 @@ MonoBehaviour:
   nbTriangle: 0
   nbCymbal: 0
   nbTrumpet: 0
-  newItemToAdd: 0
   myFont: {fileID: 0}
   offsetX: 10
   offsetY: 5
@@ -917,14 +916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946db8cfbdf13084aae8f5dbcfe4e24a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayerInventory: {fileID: 0}
-  myCollectibles: []
-  myFont: {fileID: 0}
-  offsetX: 10
-  offsetY: 5
-  textureTriangle: {fileID: 2800000, guid: 1a609367688f04343b33dd00e5649782, type: 3}
-  textureCymbal: {fileID: 2800000, guid: a6d9c623877cb274a8332d15d3d0c5f0, type: 3}
-  textureTrumpet: {fileID: 2800000, guid: 18439b9cc30d0f549be79d7a37b24007, type: 3}
 --- !u!1 &1504910521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1154,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785697413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.6796646, y: -4.3954854, z: 0}
+  m_LocalPosition: {x: 22.6796646, y: -2.10485291, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

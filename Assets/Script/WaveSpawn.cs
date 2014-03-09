@@ -17,7 +17,7 @@ public class WaveSpawn : MonoBehaviour {
 	//private ArrayList waveList;
 	//private ArrayList itmList;
 	private float timer = 0.0f;
-	private float timeSpawn = 0.5f;
+	private float timeSpawn = .75f;
 	private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 	private int size = 1;
 	private GameObject waveSpawn;
@@ -108,7 +108,6 @@ public class WaveSpawn : MonoBehaviour {
 	{
 		if(!produceWave) return;
 
-		initWavePosition.y = waveHeight;
 		initWavePosition.z = waveZ;
 		CurrentVelocitySpawn = -15f;
 		timer += Time.deltaTime;
@@ -126,14 +125,14 @@ public class WaveSpawn : MonoBehaviour {
 				break;
 			case 2:
 				initItemPosition.y = itmHeight [1];
-				initWavePosition.y+=1.0f;
+				//initWavePosition.y+=1.0f;
 				waveSpawn = (GameObject)Instantiate(wave2, initWavePosition, Quaternion.identity);
 				bouncePower = 13;
 				waveSpawn.GetComponent<WaveScript>().hp = hp2;
 				break;
 			case 3:
 				initItemPosition.y = itmHeight [2];
-				initWavePosition.y+=2.1f;
+				//initWavePosition.y+=2.1f;
 				waveSpawn = (GameObject)Instantiate(wave3, initWavePosition, Quaternion.identity);
 				bouncePower = 18;
 				waveSpawn.GetComponent<WaveScript>().hp = hp3;
