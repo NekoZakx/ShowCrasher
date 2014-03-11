@@ -64,6 +64,7 @@ public class WaveSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Awake()
 	{
+		songSize = (int)GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().clip.length;
 		nbCollectables = songSize / collectableGap;
 		nbTriangles = round(0.5 * nbCollectables);
 		nbCymbal = round(0.33 * nbCollectables);
@@ -98,7 +99,6 @@ public class WaveSpawn : MonoBehaviour {
 			Debug.Log ("ERREUR DANS DETERMINECOLLECTABLES!!!!");
 		}
 		Shuffle(collectables);
-		songSize = (int)GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().clip.length;
 	}
 	
 	// Update is called once per frame
